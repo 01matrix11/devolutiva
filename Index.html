@@ -3,474 +3,415 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Devolutivas – Clínica Mover</title>
+<title>Devolutivas - Clinica Mover</title>
 <style>
-:root{--teal:#13A39C;--teal-dark:#0d7a74;--teal-light:#e8f7f6;--teal-header:#CEE8D6;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;--danger:#dc2626;--danger-light:#fef2f2}
+:root{--t:#13A39C;--td:#0d7a74;--tl:#e8f7f6;--th:#CEE8D6;--g1:#f9fafb;--g2:#f3f4f6;--g3:#e5e7eb;--g4:#d1d5db;--g5:#9ca3af;--g6:#6b7280;--g7:#4b5563;--g8:#374151;--g9:#1f2937;--r:#dc2626}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f0f4f4;color:var(--gray-800);min-height:100vh}
-/* LOGIN */
-#login-screen{position:fixed;inset:0;background:#f0f4f4;display:flex;align-items:center;justify-content:center;z-index:9999}
-.login-box{background:#fff;border-radius:16px;padding:2.5rem 2rem;width:90%;max-width:360px;box-shadow:0 8px 40px rgba(19,163,156,.15);text-align:center}
-.login-logo{font-size:1.6rem;font-weight:700;color:var(--teal);margin-bottom:.25rem}
-.login-sub{font-size:.82rem;color:var(--gray-500);margin-bottom:2rem}
-.login-field{text-align:left;margin-bottom:1rem}
-.login-field label{display:block;font-size:.78rem;font-weight:600;color:var(--gray-600);text-transform:uppercase;margin-bottom:.25rem}
-.login-field input{width:100%;font-family:Arial,sans-serif;font-size:.95rem;padding:.6rem .75rem;border:1px solid var(--gray-300);border-radius:6px;outline:none}
-.login-field input:focus{border-color:var(--teal)}
-.login-erro{color:var(--danger);font-size:.82rem;margin:.5rem 0;min-height:1.2rem}
-#btn-login{width:100%;padding:.65rem;font-size:.95rem;margin-top:.5rem;background:var(--teal);color:#fff;border:none;border-radius:8px;font-family:Arial,sans-serif;font-weight:700;cursor:pointer}
-#btn-login:hover{background:var(--teal-dark)}
-/* SCREENS */
-.screen{min-height:100vh;display:none;flex-direction:column}
-.screen.active{display:flex}
-/* HOME */
-.home-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:2rem}
-.home-logo{text-align:center;margin-bottom:2.5rem}
-.home-logo h1{font-size:2rem;color:var(--teal);font-weight:700}
-.home-logo p{color:var(--gray-500);font-size:.9rem;margin-top:.3rem}
-.user-badge{display:inline-block;background:var(--teal-light);color:var(--teal-dark);font-size:.78rem;padding:.25rem .75rem;border-radius:99px;margin-top:.5rem;font-weight:600}
-.home-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;width:100%;max-width:720px}
-.home-btn{background:#fff;border:1.5px solid var(--gray-200);border-radius:12px;padding:1.5rem 1rem;cursor:pointer;text-align:center;transition:all .18s;font-family:Arial,sans-serif}
-.home-btn:hover{border-color:var(--teal);background:var(--teal-light);transform:translateY(-2px);box-shadow:0 4px 16px rgba(19,163,156,.15)}
-.home-btn .icon{font-size:2rem;margin-bottom:.5rem}
-.home-btn h3{font-size:.9rem;color:var(--gray-700);font-weight:600;line-height:1.3}
-.home-btn p{font-size:.75rem;color:var(--gray-400);margin-top:.25rem}
-/* TOP BAR */
-.top-bar{background:var(--teal);color:#fff;padding:.75rem 1.5rem;display:flex;align-items:center;gap:1rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.15)}
-.top-bar h2{font-size:1rem;font-weight:600;flex:1}
-.top-bar-actions{display:flex;gap:.5rem;flex-wrap:wrap}
-/* BUTTONS */
+body{font-family:Arial,sans-serif;background:#f0f4f4;color:var(--g9);min-height:100vh}
+#ls{position:fixed;inset:0;background:#f0f4f4;display:flex;align-items:center;justify-content:center;z-index:9999}
+.lb{background:#fff;border-radius:16px;padding:2.5rem 2rem;width:90%;max-width:360px;box-shadow:0 8px 40px rgba(19,163,156,.15);text-align:center}
+.ll{font-size:1.6rem;font-weight:700;color:var(--t);margin-bottom:.25rem}
+.ls{font-size:.82rem;color:var(--g6);margin-bottom:2rem}
+.lf{text-align:left;margin-bottom:1rem}
+.lf label{display:block;font-size:.78rem;font-weight:600;color:var(--g7);text-transform:uppercase;margin-bottom:.25rem}
+.lf input{width:100%;font-family:Arial,sans-serif;font-size:.95rem;padding:.6rem .75rem;border:1px solid var(--g4);border-radius:6px;outline:none}
+.lf input:focus{border-color:var(--t)}
+#lerr{color:var(--r);font-size:.82rem;margin:.5rem 0;min-height:1.2rem}
+#btnLogin{width:100%;padding:.65rem;font-size:.95rem;margin-top:.5rem;background:var(--t);color:#fff;border:none;border-radius:8px;font-family:Arial,sans-serif;font-weight:700;cursor:pointer}
+#btnLogin:hover{background:var(--td)}
+.sc{min-height:100vh;display:none;flex-direction:column}
+.sc.on{display:flex}
+.hs{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:2rem}
+.hl{text-align:center;margin-bottom:2.5rem}
+.hl h1{font-size:2rem;color:var(--t);font-weight:700}
+.hl p{color:var(--g6);font-size:.9rem;margin-top:.3rem}
+.ub{display:inline-block;background:var(--tl);color:var(--td);font-size:.78rem;padding:.25rem .75rem;border-radius:99px;margin-top:.5rem;font-weight:600}
+.hg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;width:100%;max-width:720px}
+.hb{background:#fff;border:1.5px solid var(--g3);border-radius:12px;padding:1.5rem 1rem;cursor:pointer;text-align:center;transition:all .18s;font-family:Arial,sans-serif}
+.hb:hover{border-color:var(--t);background:var(--tl);transform:translateY(-2px);box-shadow:0 4px 16px rgba(19,163,156,.15)}
+.hb .ic{font-size:2rem;margin-bottom:.5rem}
+.hb h3{font-size:.9rem;color:var(--g8);font-weight:600;line-height:1.3}
+.hb p{font-size:.75rem;color:var(--g5);margin-top:.25rem}
+.tb{background:var(--t);color:#fff;padding:.75rem 1.5rem;display:flex;align-items:center;gap:1rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.tb h2{font-size:1rem;font-weight:600;flex:1}
+.tba{display:flex;gap:.5rem;flex-wrap:wrap}
 .btn{font-family:Arial,sans-serif;cursor:pointer;border-radius:6px;padding:.4rem .85rem;font-size:.82rem;font-weight:600;border:none;transition:all .15s}
-.btn-white{background:#fff;color:var(--teal)}.btn-white:hover{background:var(--teal-light)}
-.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}.btn-outline:hover{background:rgba(255,255,255,.15)}
-.btn-teal{background:var(--teal);color:#fff}.btn-teal:hover{background:var(--teal-dark)}
-.btn-danger{background:var(--danger);color:#fff}.btn-danger:hover{background:#b91c1c}
-.btn-gray{background:var(--gray-200);color:var(--gray-700)}.btn-gray:hover{background:var(--gray-300)}
-.btn-sm{padding:.25rem .65rem;font-size:.78rem}
-.btn-icon{background:transparent;color:var(--gray-400);border:none;cursor:pointer;padding:.2rem .35rem;border-radius:4px;font-size:.8rem;transition:all .15s;font-family:Arial,sans-serif}
-.btn-icon:hover{background:var(--gray-100);color:var(--gray-700)}
-.btn-back{background:transparent;color:#fff;border:none;cursor:pointer;font-size:1.3rem;font-family:Arial,sans-serif;padding:0 .25rem}
-/* CONTENT */
-.content-area{flex:1;padding:1.5rem;max-width:900px;margin:0 auto;width:100%}
-/* FORM */
-.form-section{background:#fff;border-radius:10px;border:1px solid var(--gray-200);margin-bottom:1rem;overflow:hidden}
-.fsec-header{background:var(--teal-light);padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--gray-200);cursor:pointer;user-select:none}
-.fsec-header h3{font-size:.9rem;color:var(--teal-dark);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
-.fsec-body{padding:1rem}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem}
-.form-row.single{grid-template-columns:1fr}
-.form-group{display:flex;flex-direction:column;gap:.25rem}
-.form-group label{font-size:.78rem;font-weight:600;color:var(--gray-600);text-transform:uppercase}
-.req{color:var(--danger);margin-left:2px}
-.form-group input,.form-group select,.form-group textarea{font-family:Arial,sans-serif;font-size:.88rem;padding:.45rem .65rem;border:1px solid var(--gray-300);border-radius:6px;background:#fff;color:var(--gray-800);outline:none;width:100%}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(19,163,156,.1)}
-.form-group textarea{resize:vertical;min-height:80px;line-height:1.5}
-.form-actions{display:flex;gap:.5rem;justify-content:flex-end;margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--gray-100)}
-/* TABLE */
-.inst-table{width:100%;border-collapse:collapse;font-size:.82rem;margin:.5rem 0}
-.inst-table th{background:var(--teal-header);color:var(--teal-dark);font-weight:700;padding:.5rem .6rem;text-align:left;font-size:.78rem;text-transform:uppercase}
-.inst-table td{padding:.4rem .6rem;border-bottom:1px solid var(--gray-100);vertical-align:middle}
-.inst-table input{border:1px solid transparent;border-radius:4px;padding:.25rem .4rem;font-size:.82rem;font-family:Arial,sans-serif;width:100%;background:transparent}
-.inst-table input:focus{border-color:var(--teal);background:#fff;outline:none}
-.add-btn{display:flex;align-items:center;gap:.4rem;color:var(--teal);background:none;border:1px dashed var(--teal);border-radius:6px;padding:.4rem .75rem;font-size:.8rem;cursor:pointer;font-family:Arial,sans-serif;margin-top:.5rem;transition:all .15s}
-.add-btn:hover{background:var(--teal-light)}
-/* RESULTADOS */
-.res-item{background:#fff;border:1px solid var(--gray-200);border-radius:8px;margin-bottom:.75rem;overflow:hidden}
-.res-header{display:flex;align-items:center;gap:.5rem;padding:.6rem .85rem;background:var(--gray-50);border-bottom:1px solid var(--gray-200)}
-.res-header h4{font-size:.82rem;font-weight:700;color:var(--teal-dark);text-transform:uppercase;flex:1}
-.res-body{padding:.85rem}
-.chips-wrap{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:6px;padding:.65rem .85rem;margin-bottom:.75rem}
-.chips-label{font-size:.75rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;margin-bottom:.5rem}
-.chips{display:flex;flex-wrap:wrap;gap:.4rem}
-.chip{display:inline-flex;align-items:center;background:#fff;border:1px solid var(--gray-300);border-radius:99px;padding:.2rem .65rem;font-size:.78rem;cursor:pointer;transition:all .15s;font-family:Arial,sans-serif;user-select:none}
-.chip:hover{border-color:var(--teal);background:var(--teal-light)}
-.chip.on{background:var(--teal);border-color:var(--teal);color:#fff;font-weight:600}
-.teste-bloco{border:1px solid var(--gray-200);border-radius:8px;margin-bottom:.65rem;overflow:hidden}
-.teste-header{display:flex;align-items:center;padding:.5rem .75rem;background:var(--teal-light);border-bottom:1px solid var(--gray-200);gap:.5rem}
-.teste-header span{font-size:.8rem;font-weight:700;color:var(--teal-dark);flex:1}
-.teste-body{padding:.75rem}
-.drop-zone{border:2px dashed var(--gray-300);border-radius:8px;padding:.85rem 1rem;text-align:center;cursor:pointer;margin-top:.5rem;transition:all .18s;background:var(--gray-50)}
-.drop-zone:hover,.drop-zone.over{border-color:var(--teal);background:var(--teal-light)}
-.drop-hint{font-size:.78rem;color:var(--gray-500);line-height:1.5}
-.img-prev{max-width:100%;max-height:280px;border-radius:6px;margin-top:.5rem;display:block;margin-left:auto;margin-right:auto}
-/* REPORT */
-.rep-table{width:100%;border-collapse:collapse;font-size:.85rem;background:#fff;border-radius:8px;overflow:hidden}
-.rep-table th{background:var(--teal-header);color:var(--teal-dark);font-weight:700;padding:.6rem .75rem;text-align:left;font-size:.8rem}
-.rep-table td{padding:.55rem .75rem;border-bottom:1px solid var(--gray-100);vertical-align:middle}
-.rep-table tr:last-child td{border-bottom:none}
-.rep-table tbody tr:hover td{background:var(--teal-light)}
-.badge{display:inline-block;padding:.15rem .5rem;border-radius:99px;font-size:.72rem;font-weight:600}
-.badge-teal{background:var(--teal-light);color:var(--teal-dark)}
-.badge-gray{background:var(--gray-100);color:var(--gray-600)}
-.filters{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem}
-.filters input,.filters select{font-family:Arial,sans-serif;font-size:.83rem;padding:.4rem .65rem;border:1px solid var(--gray-300);border-radius:6px;background:#fff;outline:none}
-/* TOAST */
-.toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--teal);color:#fff;padding:.65rem 1.2rem;border-radius:99px;font-size:.82rem;font-weight:600;opacity:0;transition:opacity .3s;pointer-events:none;z-index:9000;box-shadow:0 4px 16px rgba(19,163,156,.35)}
-.toast.show{opacity:1}.toast.err{background:var(--danger)}
-.toggle-icon{color:var(--gray-400);font-size:.85rem;display:inline-block;transition:transform .2s}
-.toggle-icon.open{transform:rotate(180deg)}
-/* MODAL */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:500;display:flex;align-items:center;justify-content:center}
-.modal{background:#fff;border-radius:12px;padding:1.5rem;width:90%;max-width:480px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
-.modal h3{font-size:1rem;margin-bottom:1rem}
-.modal-actions{display:flex;gap:.5rem;justify-content:flex-end;margin-top:1rem}
-@media(max-width:600px){.home-grid{grid-template-columns:repeat(2,1fr)}.form-row{grid-template-columns:1fr}}
+.bw{background:#fff;color:var(--t)}.bw:hover{background:var(--tl)}
+.bo{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}.bo:hover{background:rgba(255,255,255,.15)}
+.bt{background:var(--t);color:#fff}.bt:hover{background:var(--td)}
+.br{background:var(--r);color:#fff}.br:hover{background:#b91c1c}
+.bg{background:var(--g3);color:var(--g8)}.bg:hover{background:var(--g4)}
+.bs{padding:.25rem .65rem;font-size:.78rem}
+.bi{background:transparent;color:var(--g5);border:none;cursor:pointer;padding:.2rem .35rem;border-radius:4px;font-size:.8rem;transition:all .15s;font-family:Arial,sans-serif}
+.bi:hover{background:var(--g2);color:var(--g8)}
+.bb{background:transparent;color:#fff;border:none;cursor:pointer;font-size:1.3rem;font-family:Arial,sans-serif;padding:0 .25rem}
+.ca{flex:1;padding:1.5rem;max-width:900px;margin:0 auto;width:100%}
+.fs{background:#fff;border-radius:10px;border:1px solid var(--g3);margin-bottom:1rem;overflow:hidden}
+.fsh{background:var(--tl);padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--g3);cursor:pointer;user-select:none}
+.fsh h3{font-size:.9rem;color:var(--td);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.fsb{padding:1rem}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem}
+.fr.s1{grid-template-columns:1fr}
+.fg{display:flex;flex-direction:column;gap:.25rem}
+.fg label{font-size:.78rem;font-weight:600;color:var(--g7);text-transform:uppercase}
+.rq{color:var(--r);margin-left:2px}
+.fg input,.fg select,.fg textarea{font-family:Arial,sans-serif;font-size:.88rem;padding:.45rem .65rem;border:1px solid var(--g4);border-radius:6px;background:#fff;color:var(--g9);outline:none;width:100%}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--t);box-shadow:0 0 0 3px rgba(19,163,156,.1)}
+.fg textarea{resize:vertical;min-height:80px;line-height:1.5}
+.fa{display:flex;gap:.5rem;justify-content:flex-end;margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--g2)}
+.it{width:100%;border-collapse:collapse;font-size:.82rem;margin:.5rem 0}
+.it th{background:var(--th);color:var(--td);font-weight:700;padding:.5rem .6rem;text-align:left;font-size:.78rem;text-transform:uppercase}
+.it td{padding:.4rem .6rem;border-bottom:1px solid var(--g2);vertical-align:middle}
+.it input{border:1px solid transparent;border-radius:4px;padding:.25rem .4rem;font-size:.82rem;font-family:Arial,sans-serif;width:100%;background:transparent}
+.it input:focus{border-color:var(--t);background:#fff;outline:none}
+.ab{display:flex;align-items:center;gap:.4rem;color:var(--t);background:none;border:1px dashed var(--t);border-radius:6px;padding:.4rem .75rem;font-size:.8rem;cursor:pointer;font-family:Arial,sans-serif;margin-top:.5rem;transition:all .15s}
+.ab:hover{background:var(--tl)}
+.ri{background:#fff;border:1px solid var(--g3);border-radius:8px;margin-bottom:.75rem;overflow:hidden}
+.rh{display:flex;align-items:center;gap:.5rem;padding:.6rem .85rem;background:var(--g1);border-bottom:1px solid var(--g3)}
+.rh h4{font-size:.82rem;font-weight:700;color:var(--td);text-transform:uppercase;flex:1}
+.rb{padding:.85rem}
+.cw{background:var(--g1);border:1px solid var(--g3);border-radius:6px;padding:.65rem .85rem;margin-bottom:.75rem}
+.cl{font-size:.75rem;font-weight:700;color:var(--g7);text-transform:uppercase;margin-bottom:.5rem}
+.cs{display:flex;flex-wrap:wrap;gap:.4rem}
+.ch{display:inline-flex;align-items:center;background:#fff;border:1px solid var(--g4);border-radius:99px;padding:.2rem .65rem;font-size:.78rem;cursor:pointer;transition:all .15s;font-family:Arial,sans-serif;user-select:none}
+.ch:hover{border-color:var(--t);background:var(--tl)}
+.ch.on{background:var(--t);border-color:var(--t);color:#fff;font-weight:600}
+.tb2{border:1px solid var(--g3);border-radius:8px;margin-bottom:.65rem;overflow:hidden}
+.th2{display:flex;align-items:center;padding:.5rem .75rem;background:var(--tl);border-bottom:1px solid var(--g3);gap:.5rem}
+.th2 span{font-size:.8rem;font-weight:700;color:var(--td);flex:1}
+.tb2b{padding:.75rem}
+.dz{border:2px dashed var(--g4);border-radius:8px;padding:.85rem 1rem;text-align:center;cursor:pointer;margin-top:.5rem;transition:all .18s;background:var(--g1)}
+.dz:hover,.dz.ov{border-color:var(--t);background:var(--tl)}
+.dh{font-size:.78rem;color:var(--g6);line-height:1.5}
+.ip{max-width:100%;max-height:280px;border-radius:6px;margin-top:.5rem;display:block;margin-left:auto;margin-right:auto}
+.rt{width:100%;border-collapse:collapse;font-size:.85rem;background:#fff;border-radius:8px;overflow:hidden}
+.rt th{background:var(--th);color:var(--td);font-weight:700;padding:.6rem .75rem;text-align:left;font-size:.8rem}
+.rt td{padding:.55rem .75rem;border-bottom:1px solid var(--g2);vertical-align:middle}
+.rt tr:last-child td{border-bottom:none}
+.rt tbody tr:hover td{background:var(--tl)}
+.bd{display:inline-block;padding:.15rem .5rem;border-radius:99px;font-size:.72rem;font-weight:600}
+.bt2{background:var(--tl);color:var(--td)}.bg2{background:var(--g2);color:var(--g7)}
+.fl{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem}
+.fl input,.fl select{font-family:Arial,sans-serif;font-size:.83rem;padding:.4rem .65rem;border:1px solid var(--g4);border-radius:6px;background:#fff;outline:none}
+.toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--t);color:#fff;padding:.65rem 1.2rem;border-radius:99px;font-size:.82rem;font-weight:600;opacity:0;transition:opacity .3s;pointer-events:none;z-index:9000}
+.toast.on{opacity:1}.toast.er{background:var(--r)}
+.ti{color:var(--g5);font-size:.85rem;display:inline-block;transition:transform .2s}
+.ti.op{transform:rotate(180deg)}
+.mo{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:500;display:flex;align-items:center;justify-content:center}
+.mb{background:#fff;border-radius:12px;padding:1.5rem;width:90%;max-width:480px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.mb h3{font-size:1rem;margin-bottom:1rem}
+.ma{display:flex;gap:.5rem;justify-content:flex-end;margin-top:1rem}
+.ac{position:absolute;background:#fff;border:1px solid var(--g4);border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.12);z-index:200;display:none;max-height:160px;overflow-y:auto;min-width:200px}
+.ai{padding:.45rem .65rem;cursor:pointer;font-size:.85rem}
+.ai:hover{background:var(--tl);color:var(--td)}
+@media(max-width:600px){.hg{grid-template-columns:repeat(2,1fr)}.fr{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<div id="login-screen">
-  <div class="login-box">
-    <div class="login-logo">Clínica Mover</div>
-    <div class="login-sub">Sistema de Devolutivas Neuropsicológicas</div>
-    <div class="login-field"><label>Usuário</label><input type="text" id="lu" placeholder="Usuário"></div>
-    <div class="login-field"><label>Senha</label><input type="password" id="ls" placeholder="Senha"></div>
-    <div class="login-erro" id="lerro"></div>
-    <button id="btn-login">Entrar</button>
+<div id="ls">
+  <div class="lb">
+    <div class="ll">Clinica Mover</div>
+    <div class="ls">Sistema de Devolutivas Neuropsicologicas</div>
+    <div class="lf"><label>Usuario</label><input type="text" id="lu" placeholder="Usuario"></div>
+    <div class="lf"><label>Senha</label><input type="password" id="lp" placeholder="Senha"></div>
+    <div id="lerr"></div>
+    <button id="btnLogin">Entrar</button>
   </div>
 </div>
 
-<div id="home" class="screen">
-  <div class="home-screen">
-    <div class="home-logo">
-      <h1>Clínica Mover</h1>
-      <p>Sistema de Devolutivas Neuropsicológicas</p>
-      <span class="user-badge" id="ubadge"></span>
+<div id="home" class="sc">
+  <div class="hs">
+    <div class="hl">
+      <h1>Clinica Mover</h1>
+      <p>Sistema de Devolutivas Neuropsicologicas</p>
+      <span class="ub" id="ubadge"></span>
     </div>
-    <div class="home-grid">
-      <button class="home-btn" id="hb-nova"><div class="icon">📝</div><h3>Criar Nova Devolutiva</h3><p>Iniciar novo laudo</p></button>
-      <button class="home-btn" id="hb-buscar"><div class="icon">🔍</div><h3>Consultar / Editar</h3><p>Buscar devolutiva existente</p></button>
-      <button class="home-btn" id="hb-rel"><div class="icon">📊</div><h3>Relatório</h3><p>Todas as devolutivas</p></button>
-      <button class="home-btn" id="hb-pac"><div class="icon">👤</div><h3>Cadastro de Paciente</h3><p>Gerenciar pacientes</p></button>
-      <button class="home-btn" id="hb-faixa"><div class="icon">🎂</div><h3>Faixa Etária</h3><p>Configurar faixas</p></button>
-      <button class="home-btn" id="hb-prof"><div class="icon">👩‍⚕️</div><h3>Profissionais</h3><p>Gerenciar profissionais</p></button>
+    <div class="hg">
+      <button class="hb" id="hNova"><div class="ic">&#128221;</div><h3>Criar Nova Devolutiva</h3><p>Iniciar novo laudo</p></button>
+      <button class="hb" id="hBuscar"><div class="ic">&#128269;</div><h3>Consultar / Editar</h3><p>Buscar devolutiva</p></button>
+      <button class="hb" id="hRel"><div class="ic">&#128202;</div><h3>Relatorio</h3><p>Todas as devolutivas</p></button>
+      <button class="hb" id="hPac"><div class="ic">&#128100;</div><h3>Cadastro de Paciente</h3><p>Gerenciar pacientes</p></button>
+      <button class="hb" id="hFaixa"><div class="ic">&#127874;</div><h3>Faixa Etaria</h3><p>Configurar faixas</p></button>
+      <button class="hb" id="hProf"><div class="ic">&#128105;</div><h3>Profissionais</h3><p>Gerenciar profissionais</p></button>
     </div>
   </div>
 </div>
 
-<div id="nova" class="screen">
-  <div class="top-bar">
-    <button class="btn-back" id="bb-nova">←</button>
-    <h2 id="nova-title">Nova Devolutiva</h2>
-    <div class="top-bar-actions">
-      <button class="btn btn-outline btn-sm" id="btn-salvar">💾 Salvar</button>
-      <button class="btn btn-outline btn-sm" id="btn-saveas">📋 Salvar Como</button>
-      <button class="btn btn-white btn-sm" id="btn-imprimir">🖨️ Imprimir</button>
+<div id="nova" class="sc">
+  <div class="tb">
+    <button class="bb" id="bbNova">&#8592;</button>
+    <h2 id="novaTitle">Nova Devolutiva</h2>
+    <div class="tba">
+      <button class="btn bo bs" id="btnSalvar">&#128190; Salvar</button>
+      <button class="btn bo bs" id="btnSaveas">&#128203; Salvar Como</button>
+      <button class="btn bw bs" id="btnImprimir">&#128424; Imprimir</button>
     </div>
   </div>
-  <div class="content-area">
-    <div class="form-section">
-      <div class="fsec-header" data-sec="id"><h3>1. Identificação</h3><span class="toggle-icon open" id="id-ti">▼</span></div>
-      <div class="fsec-body" id="id-body">
-        <div class="form-row">
-          <div class="form-group"><label>Nome do Paciente <span class="req">*</span></label><input type="text" id="f-nome" placeholder="Nome completo" autocomplete="off"><div id="ac-nome" style="position:absolute;background:#fff;border:1px solid var(--gray-300);border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.12);z-index:200;display:none;max-height:160px;overflow-y:auto;min-width:200px"></div></div>
-          <div class="form-group"><label>Data de Nascimento <span class="req">*</span></label><input type="date" id="f-nasc"></div>
-        </div>
-        <div class="form-row">
-          <div class="form-group"><label>Solicitante</label><input type="text" id="f-sol" placeholder="Ex: Neurologista..."></div>
-          <div class="form-group"><label>Faixa Etária</label><select id="f-faixa"><option value="">Selecionar...</option></select></div>
-        </div>
-        <div class="form-row">
-          <div class="form-group"><label>Validade do Laudo <span class="req">*</span></label><input type="text" id="f-val" placeholder="Ex: 2 anos"></div>
-          <div class="form-group"><label>Data de Finalização</label><input type="date" id="f-datafin"></div>
-        </div>
-        <div class="form-row single">
-          <div class="form-group"><label>Profissional / CRP <span class="req">*</span></label><input type="text" id="f-prof" placeholder="Nome / CRP" autocomplete="off"><div id="ac-prof" style="position:absolute;background:#fff;border:1px solid var(--gray-300);border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,.12);z-index:200;display:none;max-height:160px;overflow-y:auto;min-width:200px"></div></div>
-        </div>
-        <div class="form-actions"><button class="btn btn-teal btn-sm goto-btn" data-to="demanda">Próximo →</button></div>
+  <div class="ca">
+    <div class="fs">
+      <div class="fsh" data-s="id"><h3>1. Identificacao</h3><span class="ti op" id="ti-id">&#9660;</span></div>
+      <div class="fsb" id="b-id">
+        <div class="fr"><div class="fg" style="position:relative"><label>Nome do Paciente <span class="rq">*</span></label><input type="text" id="fNome" placeholder="Nome completo" autocomplete="off"><div class="ac" id="acNome"></div></div><div class="fg"><label>Data de Nascimento <span class="rq">*</span></label><input type="date" id="fNasc"></div></div>
+        <div class="fr"><div class="fg"><label>Solicitante</label><input type="text" id="fSol" placeholder="Ex: Neurologista..."></div><div class="fg"><label>Faixa Etaria</label><select id="fFaixa"><option value="">Selecionar...</option></select></div></div>
+        <div class="fr"><div class="fg"><label>Validade do Laudo <span class="rq">*</span></label><input type="text" id="fVal" placeholder="Ex: 2 anos"></div><div class="fg"><label>Data de Finalizacao</label><input type="date" id="fDataFin"></div></div>
+        <div class="fr s1"><div class="fg" style="position:relative"><label>Profissional / CRP <span class="rq">*</span></label><input type="text" id="fProf" autocomplete="off"><div class="ac" id="acProf"></div></div></div>
+        <div class="fa"><button class="btn bt bs goto" data-to="demanda">Proximo &#8594;</button></div>
       </div>
     </div>
-    <div class="form-section">
-      <div class="fsec-header" data-sec="demanda"><h3>2. Descrição da Demanda</h3><span class="toggle-icon" id="demanda-ti">▼</span></div>
-      <div class="fsec-body" id="demanda-body" style="display:none">
-        <div class="form-group"><textarea id="f-demanda" rows="5" placeholder="Descreva a demanda clínica..."></textarea></div>
-        <div class="form-actions"><button class="btn btn-teal btn-sm goto-btn" data-to="proc">Próximo →</button></div>
+    <div class="fs">
+      <div class="fsh" data-s="demanda"><h3>2. Descricao da Demanda</h3><span class="ti" id="ti-demanda">&#9660;</span></div>
+      <div class="fsb" id="b-demanda" style="display:none">
+        <div class="fg"><textarea id="fDemanda" rows="5" placeholder="Descreva a demanda clinica..."></textarea></div>
+        <div class="fa"><button class="btn bt bs goto" data-to="proc">Proximo &#8594;</button></div>
       </div>
     </div>
-    <div class="form-section">
-      <div class="fsec-header" data-sec="proc"><h3>3. Procedimento</h3><span class="toggle-icon" id="proc-ti">▼</span></div>
-      <div class="fsec-body" id="proc-body" style="display:none">
+    <div class="fs">
+      <div class="fsh" data-s="proc"><h3>3. Procedimento</h3><span class="ti" id="ti-proc">&#9660;</span></div>
+      <div class="fsb" id="b-proc" style="display:none">
         <div style="margin-bottom:.75rem">
-          <div id="proc-view" style="font-size:.88rem;color:var(--gray-700);background:var(--gray-50);padding:.75rem;border-radius:6px;border:1px solid var(--gray-200);line-height:1.6"></div>
-          <div id="proc-edit" style="display:none"><textarea id="f-proc" rows="4" style="width:100%;font-family:Arial,sans-serif;font-size:.88rem;padding:.65rem;border:1px solid var(--gray-300);border-radius:6px;outline:none;resize:vertical"></textarea></div>
-          <div style="display:flex;justify-content:flex-end;margin-top:.3rem"><button class="btn-icon" id="proc-edit-btn">✏️ editar</button></div>
+          <div id="procView" style="font-size:.88rem;color:var(--g8);background:var(--g1);padding:.75rem;border-radius:6px;border:1px solid var(--g3);line-height:1.6"></div>
+          <div id="procEdit" style="display:none"><textarea id="fProc" rows="4" style="width:100%;font-family:Arial,sans-serif;font-size:.88rem;padding:.65rem;border:1px solid var(--g4);border-radius:6px;outline:none;resize:vertical"></textarea></div>
+          <div style="display:flex;justify-content:flex-end;margin-top:.3rem"><button class="bi" id="procEditBtn">&#9999; editar</button></div>
         </div>
-        <table class="inst-table"><thead><tr><th style="width:22%">Instrumento</th><th style="width:28%">Construto</th><th style="width:20%">Resultado</th><th style="width:22%">Obs. Técnicas</th><th style="width:8%"></th></tr></thead><tbody id="inst-body"></tbody></table>
-        <button class="add-btn" id="add-inst-btn">+ Adicionar instrumento</button>
-        <div class="form-actions"><button class="btn btn-teal btn-sm goto-btn" data-to="dados">Próximo →</button></div>
+        <table class="it"><thead><tr><th style="width:22%">Instrumento</th><th style="width:28%">Construto</th><th style="width:20%">Resultado</th><th style="width:22%">Obs.</th><th style="width:8%"></th></tr></thead><tbody id="instBody"></tbody></table>
+        <button class="ab" id="addInstBtn">+ Adicionar instrumento</button>
+        <div class="fa"><button class="btn bt bs goto" data-to="dados">Proximo &#8594;</button></div>
       </div>
     </div>
-    <div class="form-section">
-      <div class="fsec-header" data-sec="dados"><h3>4.1 Dados Gerais</h3><span class="toggle-icon" id="dados-ti">▼</span></div>
-      <div class="fsec-body" id="dados-body" style="display:none">
-        <div class="form-group"><textarea id="f-dados" rows="6" placeholder="Informações gerais..."></textarea></div>
-        <div class="form-actions"><button class="btn btn-teal btn-sm goto-btn" data-to="resultados">Próximo →</button></div>
+    <div class="fs">
+      <div class="fsh" data-s="dados"><h3>4.1 Dados Gerais</h3><span class="ti" id="ti-dados">&#9660;</span></div>
+      <div class="fsb" id="b-dados" style="display:none">
+        <div class="fg"><textarea id="fDados" rows="6" placeholder="Informacoes gerais..."></textarea></div>
+        <div class="fa"><button class="btn bt bs goto" data-to="resultados">Proximo &#8594;</button></div>
       </div>
     </div>
-    <div class="form-section">
-      <div class="fsec-header" data-sec="resultados"><h3>4.2 Resultados</h3><span class="toggle-icon" id="resultados-ti">▼</span></div>
-      <div class="fsec-body" id="resultados-body" style="display:none">
-        <div id="res-container"></div>
-        <button class="add-btn" id="add-sub-btn">+ Criar novo subitem</button>
-        <div class="form-actions"><button class="btn btn-teal btn-sm goto-btn" data-to="conclusao">Próximo →</button></div>
+    <div class="fs">
+      <div class="fsh" data-s="resultados"><h3>4.2 Resultados</h3><span class="ti" id="ti-resultados">&#9660;</span></div>
+      <div class="fsb" id="b-resultados" style="display:none">
+        <div id="resCont"></div>
+        <button class="ab" id="addSubBtn">+ Criar novo subitem</button>
+        <div class="fa"><button class="btn bt bs goto" data-to="conclusao">Proximo &#8594;</button></div>
       </div>
     </div>
-    <div class="form-section">
-      <div class="fsec-header" data-sec="conclusao"><h3>5. Conclusão</h3><span class="toggle-icon" id="conclusao-ti">▼</span></div>
-      <div class="fsec-body" id="conclusao-body" style="display:none">
+    <div class="fs">
+      <div class="fsh" data-s="conclusao"><h3>5. Conclusao</h3><span class="ti" id="ti-conclusao">&#9660;</span></div>
+      <div class="fsb" id="b-conclusao" style="display:none">
         <div style="margin-bottom:.75rem">
-          <div style="display:flex;justify-content:space-between;margin-bottom:.3rem"><label style="font-size:.78rem;font-weight:600;color:var(--gray-600);text-transform:uppercase">Texto de Validade</label><button class="btn-icon viz-btn" data-viz="val-block">👁</button></div>
-          <div id="val-block"><textarea id="f-conc-val" rows="3" style="width:100%;font-family:Arial,sans-serif;font-size:.88rem;padding:.65rem;border:1px solid var(--gray-300);border-radius:6px;outline:none;resize:vertical"></textarea></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.3rem"><label style="font-size:.78rem;font-weight:600;color:var(--g7);text-transform:uppercase">Texto de Validade</label><button class="bi vz" data-vz="blkVal">&#128065;</button></div>
+          <div id="blkVal"><textarea id="fConcVal" rows="3" style="width:100%;font-family:Arial,sans-serif;font-size:.88rem;padding:.65rem;border:1px solid var(--g4);border-radius:6px;outline:none;resize:vertical"></textarea></div>
         </div>
         <div style="margin-bottom:.75rem">
-          <div style="display:flex;justify-content:space-between;margin-bottom:.3rem"><label style="font-size:.78rem;font-weight:600;color:var(--gray-600);text-transform:uppercase">Texto Complementar</label><button class="btn-icon viz-btn" data-viz="extra-block">👁</button></div>
-          <div id="extra-block"><textarea id="f-conc-extra" rows="4" placeholder="Texto complementar..." style="width:100%;font-family:Arial,sans-serif;font-size:.88rem;padding:.65rem;border:1px solid var(--gray-300);border-radius:6px;outline:none;resize:vertical"></textarea></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:.3rem"><label style="font-size:.78rem;font-weight:600;color:var(--g7);text-transform:uppercase">Texto Complementar</label><button class="bi vz" data-vz="blkExtra">&#128065;</button></div>
+          <div id="blkExtra"><textarea id="fConcExtra" rows="4" placeholder="Texto complementar..." style="width:100%;font-family:Arial,sans-serif;font-size:.88rem;padding:.65rem;border:1px solid var(--g4);border-radius:6px;outline:none;resize:vertical"></textarea></div>
         </div>
-        <div style="background:var(--teal-light);border:1px solid var(--teal);border-radius:8px;padding:.85rem;font-size:.82rem;color:var(--teal-dark);line-height:1.6"><strong>Texto final fixo:</strong> Atenciosamente, CLÍNICA MOVER – REABILITAÇÃO E INCLUSÃO — CNPJ: 51825557/0001-00</div>
-        <div class="form-actions"><button class="btn btn-teal btn-sm goto-btn" data-to="refs">Próximo →</button></div>
+        <div style="background:var(--tl);border:1px solid var(--t);border-radius:8px;padding:.85rem;font-size:.82rem;color:var(--td);line-height:1.6"><strong>Texto final fixo:</strong> Atenciosamente, CLINICA MOVER - REABILITACAO E INCLUSAO - CNPJ: 51825557/0001-00</div>
+        <div class="fa"><button class="btn bt bs goto" data-to="refs">Proximo &#8594;</button></div>
       </div>
     </div>
-    <div class="form-section">
-      <div class="fsec-header" data-sec="refs"><h3>Referências Bibliográficas</h3><span class="toggle-icon" id="refs-ti">▼</span></div>
-      <div class="fsec-body" id="refs-body" style="display:none">
-        <div style="display:flex;justify-content:flex-end;margin-bottom:.4rem"><button class="btn-icon viz-btn" data-viz="refs-block">👁</button></div>
-        <div id="refs-block"><textarea id="f-refs" rows="8" placeholder="Referências bibliográficas..." style="width:100%;font-family:Arial,sans-serif;font-size:.85rem;padding:.65rem;border:1px solid var(--gray-300);border-radius:6px;outline:none;resize:vertical"></textarea></div>
-        <div class="form-actions"><button class="btn btn-teal" id="btn-finalizar">✅ Finalizar Devolutiva</button></div>
+    <div class="fs">
+      <div class="fsh" data-s="refs"><h3>Referencias Bibliograficas</h3><span class="ti" id="ti-refs">&#9660;</span></div>
+      <div class="fsb" id="b-refs" style="display:none">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:.4rem"><button class="bi vz" data-vz="blkRefs">&#128065;</button></div>
+        <div id="blkRefs"><textarea id="fRefs" rows="8" placeholder="Referencias bibliograficas..." style="width:100%;font-family:Arial,sans-serif;font-size:.85rem;padding:.65rem;border:1px solid var(--g4);border-radius:6px;outline:none;resize:vertical"></textarea></div>
+        <div class="fa"><button class="btn bt" id="btnFinalizar">&#9989; Finalizar Devolutiva</button></div>
       </div>
     </div>
   </div>
 </div>
 
-<div id="buscar" class="screen">
-  <div class="top-bar"><button class="btn-back" id="bb-buscar">←</button><h2>Consultar / Editar</h2></div>
-  <div class="content-area">
-    <div class="filters">
-      <input type="text" id="bn" placeholder="🔍 Nome..." style="flex:1;min-width:180px">
-      <select id="bf"><option value="">Todas as faixas</option></select>
-      <select id="bp"><option value="">Todos os profissionais</option></select>
-      <input type="date" id="bd">
-    </div>
-    <div id="busca-res"></div>
+<div id="buscar" class="sc">
+  <div class="tb"><button class="bb" id="bbBuscar">&#8592;</button><h2>Consultar / Editar</h2></div>
+  <div class="ca">
+    <div class="fl"><input type="text" id="bNome" placeholder="&#128269; Nome..." style="flex:1;min-width:180px"><select id="bFaixa"><option value="">Todas as faixas</option></select><select id="bProf"><option value="">Todos os profissionais</option></select><input type="date" id="bData"></div>
+    <div id="bRes"></div>
   </div>
 </div>
 
-<div id="relatorio" class="screen">
-  <div class="top-bar"><button class="btn-back" id="bb-rel">←</button><h2>Relatório de Devolutivas</h2></div>
-  <div class="content-area">
-    <div class="filters"><select id="rel-sort"><option value="nome">Por Nome</option><option value="faixaEtaria">Por Faixa</option><option value="profissional">Por Profissional</option><option value="dataFinal">Por Data</option></select></div>
-    <div id="rel-res"></div>
+<div id="relatorio" class="sc">
+  <div class="tb"><button class="bb" id="bbRel">&#8592;</button><h2>Relatorio de Devolutivas</h2></div>
+  <div class="ca">
+    <div class="fl"><select id="relSort"><option value="nome">Por Nome</option><option value="faixaEtaria">Por Faixa</option><option value="profissional">Por Profissional</option><option value="dataFinal">Por Data</option></select></div>
+    <div id="relRes"></div>
   </div>
 </div>
 
-<div id="cad-pac" class="screen">
-  <div class="top-bar"><button class="btn-back" id="bb-pac">←</button><h2>Cadastro de Pacientes</h2><div class="top-bar-actions"><button class="btn btn-white btn-sm" id="new-pac-btn">+ Novo</button></div></div>
-  <div class="content-area">
-    <div id="form-pac" class="form-section" style="display:none;margin-bottom:1rem"><div class="fsec-body">
-      <div class="form-row"><div class="form-group"><label>Nome <span class="req">*</span></label><input type="text" id="cp-nome"></div><div class="form-group"><label>Nascimento</label><input type="date" id="cp-nasc"></div></div>
-      <div class="form-row"><div class="form-group"><label>Faixa</label><select id="cp-faixa"><option value="">Selecionar...</option></select></div><div class="form-group"><label>Contato</label><input type="text" id="cp-cont"></div></div>
-      <div class="form-actions"><button class="btn btn-gray btn-sm" id="cancel-pac">Cancelar</button><button class="btn btn-teal btn-sm" id="save-pac">Salvar</button></div>
+<div id="cadPac" class="sc">
+  <div class="tb"><button class="bb" id="bbPac">&#8592;</button><h2>Cadastro de Pacientes</h2><div class="tba"><button class="btn bw bs" id="newPacBtn">+ Novo</button></div></div>
+  <div class="ca">
+    <div id="formPac" class="fs" style="display:none;margin-bottom:1rem"><div class="fsb">
+      <div class="fr"><div class="fg"><label>Nome <span class="rq">*</span></label><input type="text" id="cpNome"></div><div class="fg"><label>Nascimento</label><input type="date" id="cpNasc"></div></div>
+      <div class="fr"><div class="fg"><label>Faixa</label><select id="cpFaixa"><option value="">Selecionar...</option></select></div><div class="fg"><label>Contato</label><input type="text" id="cpCont"></div></div>
+      <div class="fa"><button class="btn bg bs" id="cancelPac">Cancelar</button><button class="btn bt bs" id="savePac">Salvar</button></div>
     </div></div>
-    <div id="lista-pac"></div>
+    <div id="lstPac"></div>
   </div>
 </div>
 
-<div id="cad-faixa" class="screen">
-  <div class="top-bar"><button class="btn-back" id="bb-faixa">←</button><h2>Faixas Etárias</h2><div class="top-bar-actions"><button class="btn btn-white btn-sm" id="new-faixa-btn">+ Nova</button></div></div>
-  <div class="content-area">
-    <div id="form-faixa" class="form-section" style="display:none;margin-bottom:1rem"><div class="fsec-body">
-      <div class="form-row"><div class="form-group"><label>Nome <span class="req">*</span></label><input type="text" id="ff-nome" placeholder="Ex: Infantil..."></div><div class="form-group"><label>Intervalo</label><input type="text" id="ff-int" placeholder="Ex: 6-12 anos"></div></div>
-      <div class="form-actions"><button class="btn btn-gray btn-sm" id="cancel-faixa">Cancelar</button><button class="btn btn-teal btn-sm" id="save-faixa">Salvar</button></div>
+<div id="cadFaixa" class="sc">
+  <div class="tb"><button class="bb" id="bbFaixa">&#8592;</button><h2>Faixas Etarias</h2><div class="tba"><button class="btn bw bs" id="newFaixaBtn">+ Nova</button></div></div>
+  <div class="ca">
+    <div id="formFaixa" class="fs" style="display:none;margin-bottom:1rem"><div class="fsb">
+      <div class="fr"><div class="fg"><label>Nome <span class="rq">*</span></label><input type="text" id="ffNome" placeholder="Ex: Infantil..."></div><div class="fg"><label>Intervalo</label><input type="text" id="ffInt" placeholder="Ex: 6-12 anos"></div></div>
+      <div class="fa"><button class="btn bg bs" id="cancelFaixa">Cancelar</button><button class="btn bt bs" id="saveFaixa">Salvar</button></div>
     </div></div>
-    <div id="lista-faixas"></div>
+    <div id="lstFaixa"></div>
   </div>
 </div>
 
-<div id="cad-prof" class="screen">
-  <div class="top-bar"><button class="btn-back" id="bb-prof">←</button><h2>Cadastro de Profissionais</h2><div class="top-bar-actions"><button class="btn btn-white btn-sm" id="new-prof-btn">+ Novo</button></div></div>
-  <div class="content-area">
-    <div id="form-prof" class="form-section" style="display:none;margin-bottom:1rem"><div class="fsec-body">
-      <div class="form-row"><div class="form-group"><label>Nome <span class="req">*</span></label><input type="text" id="pf-nome"></div><div class="form-group"><label>CRP</label><input type="text" id="pf-crp"></div></div>
-      <div class="form-row"><div class="form-group"><label>Especialidade</label><input type="text" id="pf-esp"></div><div class="form-group"><label>Contato</label><input type="text" id="pf-cont"></div></div>
-      <div class="form-actions"><button class="btn btn-gray btn-sm" id="cancel-prof">Cancelar</button><button class="btn btn-teal btn-sm" id="save-prof">Salvar</button></div>
+<div id="cadProf" class="sc">
+  <div class="tb"><button class="bb" id="bbProf">&#8592;</button><h2>Cadastro de Profissionais</h2><div class="tba"><button class="btn bw bs" id="newProfBtn">+ Novo</button></div></div>
+  <div class="ca">
+    <div id="formProf" class="fs" style="display:none;margin-bottom:1rem"><div class="fsb">
+      <div class="fr"><div class="fg"><label>Nome <span class="rq">*</span></label><input type="text" id="pfNome"></div><div class="fg"><label>CRP</label><input type="text" id="pfCrp"></div></div>
+      <div class="fr"><div class="fg"><label>Especialidade</label><input type="text" id="pfEsp"></div><div class="fg"><label>Contato</label><input type="text" id="pfCont"></div></div>
+      <div class="fa"><button class="btn bg bs" id="cancelProf">Cancelar</button><button class="btn bt bs" id="saveProf">Salvar</button></div>
     </div></div>
-    <div id="lista-prof"></div>
+    <div id="lstProf"></div>
   </div>
 </div>
 
-<div id="modal-saveas" class="modal-overlay" style="display:none">
-  <div class="modal"><h3>Salvar como nova devolutiva</h3>
-    <div class="form-group" style="margin:.75rem 0"><label>Nome do novo paciente</label><input type="text" id="saveas-nome"></div>
-    <div class="modal-actions"><button class="btn btn-gray" id="cancel-saveas">Cancelar</button><button class="btn btn-teal" id="ok-saveas">Salvar Como</button></div>
-  </div>
-</div>
-<div id="modal-confirm" class="modal-overlay" style="display:none">
-  <div class="modal"><h3 id="confirm-msg">Confirmar?</h3>
-    <div class="modal-actions"><button class="btn btn-gray" id="cancel-confirm">Cancelar</button><button class="btn btn-danger" id="ok-confirm">Confirmar</button></div>
-  </div>
-</div>
+<div id="moSaveas" class="mo" style="display:none"><div class="mb"><h3>Salvar como nova devolutiva</h3><div class="fg" style="margin:.75rem 0"><label>Nome do novo paciente</label><input type="text" id="saveasNome"></div><div class="ma"><button class="btn bg" id="cancelSaveas">Cancelar</button><button class="btn bt" id="okSaveas">Salvar Como</button></div></div></div>
+<div id="moConfirm" class="mo" style="display:none"><div class="mb"><h3 id="confirmMsg">Confirmar?</h3><div class="ma"><button class="btn bg" id="cancelConfirm">Cancelar</button><button class="btn br" id="okConfirm">Confirmar</button></div></div></div>
 <div class="toast" id="toast"></div>
 
 <script>
-var API = "https://script.google.com/macros/s/AKfycby2spQQx24sMV09E-HbI8WTIPMqS6nXzyzsoPcfwFRFf3exe86CsDuGGZ5RZMeOgiwh/exec";
-var IMG1 = "data:image/png;base64,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";
-var IMG2 = "data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCABxANUDASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAYHBAUIAwIB/8QAQBAAAQMEAAQEBAIIBAQHAAAAAQIDBAAFBhEHEiExE0FRYRQicYEykQgjQlKhscHRFTNygiRikvEWNjdDdKKy/8QAGQEAAwEBAQAAAAAAAAAAAAAAAAMEBQIB/8QAKREAAgICAQQABQUBAAAAAAAAAAECAwQREiEiMUETMjNxgRQjQlGhUv/aAAwDAQACEQMRAD8ApbhNw8hrgM36/Rw8t4c8eMsfKE+SlDz33Aq1mGGGGQywyhpoDQQlOgPtUR4n3qXi2GMvWfkbc8VDDauUKCE6J7H6aqM45xhi/wCGKTfobvxjaflXHSOV0+4P4TWtGVVL4GTKNty5rqePHXFrXFt7V+gstxXy6G3kIGkub7HXrVP1LuIubysufZR8OIsJgkttc3MSo/tE+tRGs++UZTbj4NCiMowSl5FKUpI4UpSgBSlKAFKUoAUpSgBSlKAFKUoAUpSgBSlKAFesRn4iUyxzcviLSjfps63XlX6CQdg6IoA6kxPG7XjtsaiwI6QvlBceI2txXmSf6V7X3H7Ne46mbnAZf5hrnKdLT9FdxVZYfxdaYgsQr/DdWppAR8SydlQA6bSfP71hXji3dZN8Z/whhEeAhwAtrSFLeG/M+X2rV/UUqCX+GT+nuc9/6RfiLiMjFr38MjnehvArju66keYPuKV0Bf7bbbj4BuDaFcgPJzDtvW/6UpM8PufF9B8MztXJdSOY8q38QOGzcKSohxLYaeO9qbdSOi/v3+hqlMsxe7Y1OVHuEdXh7/VvpG0OD1B/pTDsluOL3UToCgpJHK6yo/I4n0P9/Kr0x3NsWyuIIshTDTytc0SWB1P/AC76GvFwyIpN6kj188eTaW4s5wpXRs3hlh0tanRb1s83X9Q8QPt3rUzuD2OuoIiTZ0ZXqohwfloVw8OxeDtZlb8lEV9stOvupaZbU44s6SlI2SfpVyI4LQg5tV9fKN9gwAT/ABqcYth1gxsc1uhgvnu+6eZz7Hy+1EMOxvu6BPMrS6dSgF4VliGC+rH54bA5irwj2rQuIW04ptxCkLSdFKhog/Suveu/etBe8Txu5XJF1ukBhbzaTsqPKlXur1I96bPB6drFQzv+kcv0qbcX5GMv39tOONMjw0ESXGBptaumteXQelQmoZx4ya2XQlyinrQpSlcnQpSlAClKUAKUpQArOtNoud2dLVtgSJax3DSCdVcnDqDgd/xFi3/BxDMS2BKQ4eV4ua6rB3vX06VP7FaYFltqINsjpZjp9O6j6k+Zq2vE5ae+hFZmcdrXU5lu2MZBamPHuNnmRmv31tkCtRXXrqEOtKadQlxtY0pChsKHoQe9QLIOFGOXJxb0Nb9udWrZ8PSkfZJ7fnXtmE18jPK81P50c/0q6WOC8AOAvXyQtAPZLABI+u628fhJibYHiCe8r3fAB+wFLWHaxjzKkUAASQACSewFWdwo4ey5c9i9XqOpiG0oLZZWNKeUOxI8k/zqybfi2H4yhUsQ4kfl7vylBRH/AFdqh2fcV47bTsDGiXXlbSqYofKn15R5n3pkaIU91j/AuV87u2tfkwuNWXON39i2Wx7RiIPjrSrYK1a+X7AfxpVTurW64pxxalrUSVKUdkn1NKmndKcmymumMIqJ80pSlDTcWnJ8htbiVwbxMa5RoJLhUkf7TsfwqT27i1lcYj4hUSYnpvxWtH80kVAKUyNs4+GLlVCXlHRvD7PrflQMVxsQ7ikElknYWPVJ8/pUyrkq0yJkW5R5FvU4JaHAWuQbJVvoNef0rq+C487BYdkI8N5baVOJ/dVrqK0sW52JqXlGblUqtpx8M0WRyGri6bXbctbtVwSeRTaC2pR35FJ67+hFVxeuGebPOrbF8TcI6ldC7JWN+5Sdj+dTbMMKx7KnpK2Xmo92aHzusKBIV5eIkf8AeqrTfMxwG9rt8iS4tLZG2XiVtOJ9U77A+opd+t966f2mMoT12Pr/AE0buBwZuywozrtDYP7IaSpz896rwu3B6/RwV2+ZEmpA3ykltRPoAen8atDBcvt2VwC5HIZltj9dGUr5k+49U+9bu5zY9ut78+UvkYYQVrIG+grtY1Mo7Rw8m6MtM5SuUCZbZi4c+O5HfR+JCxo1jVaXE/McQyazeHHjTFXFpQLDxbCdDzCjvqPaqtrOsioy1F7Ro1ylKO5LTFKUpYwUpWTa1Q03GOq4IdXEDgLyWiAop8wN0IGbjFcNv2SbXbommAdF908qB9/P7VNovBecpgGTe47buuqUNFSR99j+VTbD86xW6SY9ktKXoyuXTLS2eVOgOw0T11Ux8tnoK06sWpre9mZblWp61oop/hDk8Z3xIc2C5yn5FJdUhX17dPzqSY5hmUWb/jrrmy4DbfcJdLide/P0B+xry4h8UvhH3bZjZQ44n5XJh6pSfMIHY/Wo/g+I3nOHjdb/AHCWLeFfiWslbx9E76Ae9L1Wp8a02/uM3Y4crGkvsXXap8G4RyuBPZmpbIQtxtYV199edZLzjbLS3nVpbbQkqWpR0Egdya12NwrJboSoFjTGSywrlcS0sKIV/wA57831qG8e5dzj4syzDSsRX3dSnEjsPJJ9AT/arZTcIcmRRhznxRqMo4wlmY5Hx+E060g6EiQDpR9Qka6feojP4n5jKCwm4ojJVvYZaSND0BOzULpWTLIsl7NaOPXH0ZM64T56gqbNkSSOoLrhVr86xqUpO9jtaFKUoAUpSgBUz4eYtZb0lcy932PCYbVrwA4A4vXrvsK32IcJlXWwtXK43JcRchPOy022FaT5FW6+BwbvfxxbNyhCN5O9dn/b33VMKJrUnHZNO+t7ipaLMxDHMRt6BLsEeK8odBIC/FUPbZ7VJfPdR/BsWh4palQorq3lur53nV9OY/TyFSCtStaiumjLse5Prso7OrZdsBy5OR2l9xUSU6VdST1PVTa/UVOrpbrPxNw5mWwUsydfqXSNqZcHdCvUf96036QtxbascG2DRdfeLpHolI1v86jXAW/KhZC5ZXnAI85O0A+To7a+o2PyqPcYWuv0yzUp1Kz2iIW+VdcOyrxEgtTITpQ4gnoseaT7EV0zAkR7taGJQQlceWwlfKobBSodjVNfpA2b4a/Rry00Q3Mb5HVAdPET6+5H8qsPhNdmLngsHw1J8SI38O6gd0lI6fmNGvcZcLJVs8yWrK42IwL1g/Du3BU26Mtwm1n9qQpKd+wqjsmTak32WmxqcVbg4QwXPxctXk5IwbiBL+Clhwzo/MhLbhLTgG+vL61lx+GmHtRnI6bYXFOJKQ466VKSfUGiyj4vya0FV/wvn3s5wpWXeITltusqA7+OO6psn10e9YlZrWuhpJ76ip7wtg4PPYks5M94cwrHg87pQgp15Eee/WsrglisG+zZs26xUyYsZIQltR6KWfXXXoKsOXw3whnnmSISmGmwVLJkFKEj3quiiTSn0/JJffFNw6/g2uM4hjlgdMq1Qkh1Y6OrXzqAPoT2FRvjjkj1osTVrhrKJFw5gtYOilsa3r6719N1v8PyPH7m6uz2APKZhN6CuQ+HoHWgo96qvj1do8/KWYEchZgtcjigP21dSPsNfnVV04xp7CWmEpXLmYPCnCjlFwXKmcyLZGUPEI7uK78g/rU54uZaLHCaxiwkMynEBKy108Fs9kj3Nb3D2WcP4ZtSZbfhLajmS+lXQlauoSffqBVAy7o/Ov6rtMUVuuPh1Z++9UiX7NaivLHxTuscn4RfPCXE3cbs7kia4VTpwStxO+jY8k+569TUzeabfaUy82h1tY0pCxsEe4rytspmdb48yOsLaeaStCh5gisir4RUYpLwQTk5SbfkrPKMFwB99xpFxYtEwnfKh8co9uU9hVNX2Ai2XV+E3NjzUNnSX2DtCxVy51wsavNyeulqmpjSHjzOtOglCleZBHUbrSWTg1Mc5lXi6Nxx+yiOnnV9yelQXUzlLShovpuhGO5T2VPSpNxDxKRiV2bjLfTIjvpK2HQNEgHRBHkRUZqOUXF6ZZGSktoUpSuToUpSgCzOHfE9yzRGbTemVSITY5Wnkf5jY9CPMfxqw5/EnEYtuExFx+JKh8rLST4h+oPb71zhSqYZVkFomniVzey2LNn+UZRm0GHbdQ4ZdBWw2kHbY6qK1H2+lWLnGX2zFYRckrDstY/Uxkq+ZXufQe9c3Wi5z7TNTNt0pyNISCAtB8j5e9eM2XJmyVyZj7j7yztS3FEk11HKlGL9tnMsSMpL0kZuS3ufkF2duNwd53Fn5Uj8KE+SQPIV4WWc7bbtEuDOvEjupcTv2NYdZ1ht711vMS3xxtyQ6lA+5qbbct+ynSUdejpPJrLCy/GBFfJbS+hLzLgGy2ojYP8AGqZs9yyDhhkEiLLhh1p5PzNqVpDoB6LSas+8Z/j+O3pnHXg+pTIQ046kDka6DW/PtonVZfEfFIWU2lv4iWmE5F24iQobSlOuoPbp2rTtgp90H3IzKpuHbNdrKsz7JMYyJDd4tiZVsvbRBJKNB3/cn9oeprXyOJmXvWxMH/EEoATyl5DYDqh7mog8gNvLbCwsJUQFDsdedfFZ7um234NBUwSS8n0tSlrUtaipSjsknZJr5pSlDTZY/fbrYZfxVqmORnCNK11SoehB6Gtze8zvOUvx4d7uQiwOYeIGGyEgeaiBsqNRSldqcktb6HDhFveupbK+JVjx+xItOI21wqSkjxpACRv98gdVH61g8MsInZDdU5FfAoQi54w5x80le9/9O/Oo3w4xmPlF9MGRPREQhHiaPVTuj1Sn3q+slvdrw3H2X5DaxHb5WGGmxsq0OgH2BqypO3vs8IjtarfCvyyMce7qqDibNubGjOd5T/oRokfmU1QtXJxNuELMuHLV+tiHP+CladbWAFNgjR3/APX86puk5b3Zv0OxFqvXssHhfxBdx5SbXc+d61rV8p7qYJ8x6j2q2s0nznMGl3PGpfM+G0utPM6VtIO1a8u265krZW+/Xi3wXoUK5SWIzw042lZ5T/b7V7VkuMXF+Dy3GUpKUfJZ2F8XNlMTJ2+nYS2k/wD6T/UVKb9xOxa2sc0eWbi8U7Q3HGx91dh/OudqURy7EtBLErb2bzM8muGU3X46dyoCE8jTSPwtp9B/etHSlTSk5PbKYxUVpClKV4eilKUAKUpQApSlACuguEuFQ7Hbo14kpD1yktBfMTsNJV1AT761s1z7XRHCHKWb9jzcF5YE+CgNuJ7c6B0SofwFV4fHn18+iTM5cOnj2U9mltnK4jz7cT40l+bpvr35yCkb+hA+1W7xdxm5XyxNOWp18yI40uMlzSXk669OxUKxZ9jjS+OLEhaRpq3plqT+8sEpB/kftVi1TVQnzT9smtve4Nekcws4TljyFrbsUwhHfaQP5960C0qQtSFpKVJOiCOoNdETOKGLxJrsaSu4IW0opJ+GPUj061SvEG7QL3lcy5W1gtR3SNbToqOuqiPLdR3VVwXbLZXTbZN90dEfpSlTlIrYWSyXa9vqZtUF6WtA2oIHYe5PStfVqcJs5xzHMedg3JD7MlTxWXGmufxB5b6+VMqjGUtSekLtlKMdxW2ReyYLlki8sx022TDUFjmeX8obHmd/2qx+N9sWzw+hNseM+iHJR4ji1cyuUpI5lE+pI/OpfieV2zJ0PKtolAM65vGaKQd+h7GsjL7c3dsYuFvdOg6wrR9FDqD+YFaEceKrfF72Z0siTsXJa0QH9H+KH8VurclCXYz0nkLa07CvkG6iHF/DY2Mzo8u3EiFMKtNqOy2sdwPbRq0eDUduNw9glOgXFOLWr1PMf6VV/GfK2r/ekQISwuFBJSlY/wDcWfxKHt5fal2xiqFvyNqlJ5D14IDSlKzzQFKUoAUpSgBSlKAFKUoAUpSgBSlKAFWVwel4vZESL7dLwWZyEqbEblP4TrqP3ifSq1pXdc+EuWjiyHOPHZY0fiG2eJ//AIieaWmApv4bl1tSWvX6761awznEClKv8fh6UNj5+o+vpXMdKdXlThsRZiwnr1o6vkQrPeoXO9Fhzo8hH4ygK5x7K71UHF7A7bYYCLzaVLaaU6EOR1HYTvzSe/2qa8FLTcrViRNyUpIkueKwyonbaNeh7b76qJ8e8mjSVs45DUlwsL8SSsHoFa6I/rVd/GVPKS6ktClG7jF9CpqUpWWah6w2FSZbMZJAU64lAJ8iTquicZ4c41ZW2nFxBOlo0S6/8w5vZPbX51zoy4pp1DqDpSFBST7iun8IyKFklhYnR1pDiUhD7RV8yFgdQfr3q3DUG3vyRZrmkteD3ud6sFgDbE6dDgeJsobOk799Coxm/EOwxMdki13FmZNfbLbKWjvlJGuY+mqrXjRaLjBzGROllTkeYeeO5vY0B+H2I9Kg9dW5U4txS0c1YsJJSb2Wxwoza1Rsedxq+yFRWz4gZf8A2eVe9gnyOydGq5yaNbYd6kR7TOM6GhX6t4p1zf3+ta2lSStcoqL9FUalGTkvYpSlLGilKUAKUpQApSlAClKUAKUpQApSlAClKUAKUpQB0kr/ANNo3/wk/wAq5wf/AM9z/Uf50pVmX/H7EWJ/L7nxSlKjLRU44M/+av8AZSlNp+ohV302ST9Iv/PtP+hf9KqOlK6yfqs4xfpIUpSkFApSlAClKUAKUpQApSlAH//Z";
-var PROC_DEF = "A avaliação neuropsicológica foi realizada ao longo de 13 sessões, com duração aproximada de 50 minutos, utilizando testes padronizados, escalas psicométricas e inventários específicos. Além da anamnese, foram utilizados os seguintes instrumentos avaliativos:";
-var SUBS_DEF = ["COGNIÇÃO GERAL","ATENÇÃO","MEMÓRIA","FUNÇÕES EXECUTIVAS","FUNÇÕES MOTORAS","FUNCIONAMENTO SOCIOEMOCIONAL/COMPORTAMENTAL/SENSORIAL","LINGUAGEM","FUNÇÕES ACADÊMICAS/LEITURA & ESCRITA"];
+var API="https://script.google.com/macros/s/AKfycby2spQQx24sMV09E-HbI8WTIPMqS6nXzyzsoPcfwFRFf3exe86CsDuGGZ5RZMeOgiwh/exec";
+var IMG1="data:image/png;base64,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";
+var IMG2="data:image/png;base64,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";
+var PROC_DEF="A avaliacao neuropsicologica foi realizada ao longo de 13 sessoes, com duracao aproximada de 50 minutos, utilizando testes padronizados, escalas psicometricas e inventarios especificos. Alem da anamnese, foram utilizados os seguintes instrumentos avaliativos:";
+var SUBS_DEF=["COGNICAO GERAL","ATENCAO","MEMORIA","FUNCOES EXECUTIVAS","FUNCOES MOTORAS","FUNCIONAMENTO SOCIOEMOCIONAL/COMPORTAMENTAL/SENSORIAL","LINGUAGEM","FUNCOES ACADEMICAS/LEITURA E ESCRITA"];
 
-var devAtual=null, subItens=[], devCache=[], profCache=[], faixaCache=[];
-var sid=0, tid=0, saveTimer=null;
+var devAtual=null,subs=[],devs=[],profs=[],faixas=[];
+var sid=0,tid=0,saveTimer=null;
 
-// ── API via fetch ────────────────────────────────────────────
-function api(action, payload) {
-  var url = API + "?action=" + encodeURIComponent(action) + "&data=" + encodeURIComponent(JSON.stringify(payload||{}));
-  return fetch(url).then(function(r){return r.json();}).catch(function(e){toast("Erro de rede: "+e.message,true);throw e;});
+function api(action,payload){
+  var url=API+"?action="+encodeURIComponent(action)+"&data="+encodeURIComponent(JSON.stringify(payload||{}));
+  return fetch(url).then(function(r){return r.json();}).catch(function(e){toast("Erro: "+e.message,1);throw e;});
 }
 
-// ── TOAST ────────────────────────────────────────────────────
 function toast(msg,err){
   var el=document.getElementById("toast");
-  el.textContent=msg; el.className="toast show"+(err?" err":"");
-  setTimeout(function(){el.classList.remove("show");},3000);
+  el.textContent=msg;el.className="toast on"+(err?" er":"");
+  setTimeout(function(){el.classList.remove("on");},3000);
 }
 
-// ── TELA ─────────────────────────────────────────────────────
 function show(id){
-  document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("active");s.style.display="none";});
-  var el=document.getElementById(id); if(el){el.classList.add("active");el.style.display="flex";}
+  document.querySelectorAll(".sc").forEach(function(s){s.classList.remove("on");s.style.display="none";});
+  var el=document.getElementById(id);if(el){el.classList.add("on");el.style.display="flex";}
 }
-function home(){show("home");}
+function goHome(){show("home");}
 
-// ── LOGIN ────────────────────────────────────────────────────
 function login(){
   var u=document.getElementById("lu").value.trim();
-  var s=document.getElementById("ls").value;
-  var er=document.getElementById("lerro");
-  if(!u||!s){er.textContent="Preencha usuário e senha.";return;}
+  var p=document.getElementById("lp").value;
+  var er=document.getElementById("lerr");
+  if(!u||!p){er.textContent="Preencha usuario e senha.";return;}
   er.textContent="Verificando...";
-  api("fazerLogin",{usuario:u,senha:s}).then(function(res){
+  api("fazerLogin",{usuario:u,senha:p}).then(function(res){
     if(res.ok){
-      document.getElementById("login-screen").style.display="none";
-      document.getElementById("ubadge").textContent="✓ "+res.usuario;
+      document.getElementById("ls").style.display="none";
+      document.getElementById("ubadge").textContent="v "+res.usuario;
       loadAll();
-    } else { er.textContent=res.erro||"Usuário ou senha incorretos."; }
-  });
+    }else{er.textContent=res.erro||"Usuario ou senha incorretos.";}
+  }).catch(function(){er.textContent="Erro de conexao com o servidor.";});
 }
 
 function loadAll(){
-  Promise.all([
-    api("listarDevolutivas",{}),
-    api("listarProfissionais",{}),
-    api("listarFaixas",{})
-  ]).then(function(rs){
-    devCache=rs[0]||[]; profCache=rs[1]||[]; faixaCache=rs[2]||[];
-    show("home");
+  Promise.all([api("listarDevolutivas",{}),api("listarProfissionais",{}),api("listarFaixas",{})]).then(function(rs){
+    devs=rs[0]||[];profs=rs[1]||[];faixas=rs[2]||[];show("home");
   });
 }
 
-// ── NOVA DEVOLUTIVA ──────────────────────────────────────────
 function initNova(d){
   devAtual=d||null;
-  document.getElementById("nova-title").textContent=d?"Editar Devolutiva":"Nova Devolutiva";
+  document.getElementById("novaTitle").textContent=d?"Editar Devolutiva":"Nova Devolutiva";
   var v=d||{};
-  sv("f-nome",v.nome); sv("f-nasc",v.nascimento); sv("f-sol",v.solicitante);
-  sv("f-val",v.validade); sv("f-datafin",v.dataFinal); sv("f-demanda",v.demanda);
-  sv("f-dados",v.dados); sv("f-conc-val",v.conclusaoValidade); sv("f-conc-extra",v.conclusaoExtra);
-  sv("f-refs",v.referencias);
-  document.getElementById("f-prof").value=v.profissional||"Gabriel Felipe de Freitas / CRP 39751";
+  sv("fNome",v.nome);sv("fNasc",v.nascimento);sv("fSol",v.solicitante);
+  sv("fVal",v.validade);sv("fDataFin",v.dataFinal);sv("fDemanda",v.demanda);
+  sv("fDados",v.dados);sv("fConcVal",v.conclusaoValidade);sv("fConcExtra",v.conclusaoExtra);sv("fRefs",v.referencias);
+  document.getElementById("fProf").value=v.profissional||"Gabriel Felipe de Freitas / CRP 39751";
   var intro=v.procIntro||PROC_DEF;
-  sv("f-proc",intro); document.getElementById("proc-view").textContent=intro;
-
-  var fs=document.getElementById("f-faixa");
-  fs.innerHTML='<option value="">Selecionar...</option>'+faixaCache.map(function(f){return '<option value="'+f.nome+'"'+(v.faixaEtaria===f.nome?" selected":"")+">"+f.nome+"</option>";}).join("");
-
-  document.getElementById("inst-body").innerHTML="";
-  var ins=v.instrumentos||[]; if(!ins.length) addInst(); else ins.forEach(addInst);
-
-  subItens=(v.resultados&&v.resultados.length)?v.resultados.map(function(s){return Object.assign({},s,{_id:"s"+(++sid),testes:(s.testes||[]).map(function(t){return Object.assign({},t,{_tid:"t"+(++tid)});})});}):SUBS_DEF.map(function(n){return{nome:n,visivel:true,testes:[],_id:"s"+(++sid)};});
+  sv("fProc",intro);document.getElementById("procView").textContent=intro;
+  var fs=document.getElementById("fFaixa");
+  fs.innerHTML='<option value="">Selecionar...</option>'+faixas.map(function(f){return'<option value="'+f.nome+'"'+(v.faixaEtaria===f.nome?" selected":"")+">"+f.nome+"</option>";}).join("");
+  document.getElementById("instBody").innerHTML="";
+  var ins=v.instrumentos||[];if(!ins.length)addInst();else ins.forEach(addInst);
+  subs=(v.resultados&&v.resultados.length)?v.resultados.map(function(s){return Object.assign({},s,{_id:"s"+(++sid),testes:(s.testes||[]).map(function(t){return Object.assign({},t,{_tid:"t"+(++tid)});});});}):SUBS_DEF.map(function(n){return{nome:n,visivel:true,testes:[],_id:"s"+(++sid)};});
   renderRes();
-  if(!v.conclusaoValidade) updVal();
-
+  if(!v.conclusaoValidade)updVal();
   ["demanda","proc","dados","resultados","conclusao","refs"].forEach(function(s){
-    var b=document.getElementById(s+"-body"); if(b) b.style.display="none";
-    var t=document.getElementById(s+"-ti"); if(t){t.textContent="▼";t.classList.remove("open");}
+    var b=document.getElementById("b-"+s);if(b)b.style.display="none";
+    var t=document.getElementById("ti-"+s);if(t){t.innerHTML="&#9660;";t.classList.remove("op");}
   });
-  document.getElementById("id-body").style.display="block";
-  document.getElementById("id-ti").textContent="▲";
-  document.getElementById("id-ti").classList.add("open");
+  document.getElementById("b-id").style.display="block";
+  document.getElementById("ti-id").innerHTML="&#9650;";
+  document.getElementById("ti-id").classList.add("op");
 }
 
 function sv(id,v){var e=document.getElementById(id);if(e&&v!=null)e.value=v;}
 function gv(id){var e=document.getElementById(id);return e?e.value:"";}
-function updVal(){var v=gv("f-val")||"2 anos";var e=document.getElementById("f-conc-val");if(e)e.value="O presente laudo tem validade de "+v+", conforme recomendação do Conselho Federal de Psicologia, podendo ser reavaliado diante de mudanças significativas no quadro clínico ou no contexto de vida do examinando.";}
+function updVal(){var v=gv("fVal")||"2 anos";var e=document.getElementById("fConcVal");if(e)e.value="O presente laudo tem validade de "+v+", conforme recomendacao do Conselho Federal de Psicologia, podendo ser reavaliado diante de mudancas significativas no quadro clinico ou no contexto de vida do examinando.";}
 
-// ── INSTRUMENTOS ─────────────────────────────────────────────
 function addInst(d){
   var td=d||{},tr=document.createElement("tr");
-  tr.innerHTML='<td><input type="text" value="'+(td.instrumento||"")+'" placeholder="Instrumento..."></td><td><input type="text" value="'+(td.construto||"")+'" placeholder="Construto..."></td><td><input type="text" value="'+(td.resultado||"")+'" placeholder="Resultado..."></td><td><input type="text" value="'+(td.observacoes||"")+'" placeholder="Observações..."></td><td><button class="btn-icon" style="color:var(--danger)">✕</button></td>';
+  tr.innerHTML='<td><input type="text" value="'+(td.instrumento||"")+'" placeholder="Instrumento..."></td><td><input type="text" value="'+(td.construto||"")+'" placeholder="Construto..."></td><td><input type="text" value="'+(td.resultado||"")+'" placeholder="Resultado..."></td><td><input type="text" value="'+(td.observacoes||"")+'" placeholder="Obs..."></td><td><button class="bi" style="color:var(--r)">x</button></td>';
   tr.querySelector("button").addEventListener("click",function(){tr.remove();renderRes();});
   var i0=tr.querySelectorAll("input")[0];
   i0.addEventListener("blur",function(){if(i0.value.trim())api("salvarInstrumento",{valor:i0.value.trim()});renderRes();});
   tr.querySelectorAll("input")[1].addEventListener("blur",function(){var v=tr.querySelectorAll("input")[1].value.trim();if(v)api("salvarConstruto",{valor:v});});
-  document.getElementById("inst-body").appendChild(tr);
+  document.getElementById("instBody").appendChild(tr);
 }
 
 function getInsts(){
   var n=[];
-  document.querySelectorAll("#inst-body tr").forEach(function(tr){var v=tr.querySelector("input").value.trim();if(v)n.push(v);});
+  document.querySelectorAll("#instBody tr").forEach(function(tr){var v=tr.querySelector("input").value.trim();if(v)n.push(v);});
   return n.filter(function(v,i,a){return a.indexOf(v)===i;});
 }
 
-// ── RESULTADOS ───────────────────────────────────────────────
 function renderRes(){
-  var cont=document.getElementById("res-container"),insts=getInsts();
+  var cont=document.getElementById("resCont"),insts=getInsts();
   cont.innerHTML="";
-  subItens.forEach(function(s){
-    var div=document.createElement("div"); div.className="res-item"; div.id="ri-"+s._id;
-    var chips=insts.length?'<div class="chips-wrap"><div class="chips-label">Selecionar testes:</div><div class="chips">'+insts.map(function(nm){var on=s.testes&&s.testes.some(function(t){return t.nome===nm;});return'<span class="chip'+(on?" on":"")+'" data-sid="'+s._id+'" data-nm="'+nm+'">'+nm+"</span>";}).join("")+"</div></div>":'<div style="font-size:.78rem;color:var(--gray-400);margin-bottom:.65rem;padding:.5rem;background:var(--gray-50);border-radius:6px">ⓘ Adicione instrumentos no Procedimento.</div>';
-    var blocos=(s.testes||[]).map(function(t){return mkBloco(s._id,t);}).join("");
-    div.innerHTML='<div class="res-header"><h4>'+s.nome+'</h4><span style="font-size:.72rem;color:var(--gray-400);margin-right:.25rem">'+(s.visivel?"visível":"oculto")+'</span><button class="btn-icon tg-sub" data-sid="'+s._id+'">'+(s.visivel?"👁":"🙈")+'</button><button class="btn-icon rm-sub" data-sid="'+s._id+'" style="color:var(--danger)">✕</button></div>'+(s.visivel?'<div class="res-body">'+chips+'<div id="tb-'+s._id+'">'+blocos+"</div></div>":"");
+  subs.forEach(function(s){
+    var div=document.createElement("div");div.className="ri";div.id="ri-"+s._id;
+    var chips=insts.length?'<div class="cw"><div class="cl">Selecionar testes:</div><div class="cs">'+insts.map(function(nm){var on=s.testes&&s.testes.some(function(t){return t.nome===nm;});return'<span class="ch'+(on?" on":"")+'" data-sid="'+s._id+'" data-nm="'+nm+'">'+nm+"</span>";}).join("")+"</div></div>":'<div style="font-size:.78rem;color:var(--g5);margin-bottom:.65rem;padding:.5rem;background:var(--g1);border-radius:6px">Adicione instrumentos no Procedimento.</div>';
+    var blocos=(s.testes||[]).map(function(t){return mkB(s._id,t);}).join("");
+    div.innerHTML='<div class="rh"><h4>'+s.nome+'</h4><span style="font-size:.72rem;color:var(--g5);margin-right:.25rem">'+(s.visivel?"visivel":"oculto")+'</span><button class="bi tgSub" data-sid="'+s._id+'">'+(s.visivel?"&#128065;":"&#128584;")+'</button><button class="bi rmSub" data-sid="'+s._id+'" style="color:var(--r)">x</button></div>'+(s.visivel?'<div class="rb">'+chips+'<div id="tb-'+s._id+'">'+blocos+"</div></div>":"");
     cont.appendChild(div);
   });
-  cont.querySelectorAll(".chip").forEach(function(c){c.addEventListener("click",function(){toggleTeste(c.dataset.sid,c.dataset.nm,c);});});
-  cont.querySelectorAll(".tg-sub").forEach(function(b){b.addEventListener("click",function(){saveTxts();var s=subItens.find(function(x){return x._id===b.dataset.sid;});if(s){s.visivel=!s.visivel;renderRes();}});});
-  cont.querySelectorAll(".rm-sub").forEach(function(b){b.addEventListener("click",function(){saveTxts();subItens=subItens.filter(function(x){return x._id!==b.dataset.sid;});renderRes();});});
-  bindBlocos();
+  cont.querySelectorAll(".ch").forEach(function(c){c.addEventListener("click",function(){togTeste(c.dataset.sid,c.dataset.nm,c);});});
+  cont.querySelectorAll(".tgSub").forEach(function(b){b.addEventListener("click",function(){saveTx();var s=subs.find(function(x){return x._id===b.dataset.sid;});if(s){s.visivel=!s.visivel;renderRes();}});});
+  cont.querySelectorAll(".rmSub").forEach(function(b){b.addEventListener("click",function(){saveTx();subs=subs.filter(function(x){return x._id!==b.dataset.sid;});renderRes();});});
+  bindB();
 }
 
-function mkBloco(sid,t){
-  var img=t.imagem?'<img class="img-prev" src="'+t.imagem+'"><div style="text-align:center;margin-top:.4rem"><button class="btn btn-gray btn-sm rm-img" data-sid="'+sid+'" data-tid="'+t._tid+'">Remover imagem</button></div>':'<div class="drop-hint">📷 Clique &nbsp;|&nbsp; <strong>Ctrl+V</strong> &nbsp;|&nbsp; Arraste</div>';
-  return'<div class="teste-bloco" id="bl-'+t._tid+'"><div class="teste-header"><span>'+t.nome+'</span><button class="btn-icon rm-bloco" data-sid="'+sid+'" data-tid="'+t._tid+'" style="color:var(--danger)">✕</button></div><div class="teste-body"><textarea id="tx-'+t._tid+'" rows="4" style="width:100%;font-family:Arial,sans-serif;font-size:.85rem;padding:.6rem;border:1px solid var(--gray-300);border-radius:6px;outline:none;resize:vertical">'+(t.texto||"")+'</textarea><div class="drop-zone" id="dz-'+t._tid+'" data-sid="'+sid+'" data-tid="'+t._tid+'"><input type="file" id="fi-'+t._tid+'" accept="image/*" style="display:none">'+img+"</div></div></div>";
+function mkB(sid,t){
+  var img=t.imagem?'<img class="ip" src="'+t.imagem+'"><div style="text-align:center;margin-top:.4rem"><button class="btn bg bs rmImg" data-sid="'+sid+'" data-tid="'+t._tid+'">Remover imagem</button></div>':'<div class="dh">&#128247; Clique | Ctrl+V | Arraste</div>';
+  return'<div class="tb2" id="bl-'+t._tid+'"><div class="th2"><span>'+t.nome+'</span><button class="bi rmB" data-sid="'+sid+'" data-tid="'+t._tid+'" style="color:var(--r)">x</button></div><div class="tb2b"><textarea id="tx-'+t._tid+'" rows="4" style="width:100%;font-family:Arial,sans-serif;font-size:.85rem;padding:.6rem;border:1px solid var(--g4);border-radius:6px;outline:none;resize:vertical">'+(t.texto||"")+'</textarea><div class="dz" id="dz-'+t._tid+'" data-sid="'+sid+'" data-tid="'+t._tid+'"><input type="file" id="fi-'+t._tid+'" accept="image/*" style="display:none">'+img+"</div></div></div>";
 }
 
-function bindBlocos(){
-  document.querySelectorAll(".rm-bloco").forEach(function(b){b.addEventListener("click",function(){saveTxts();var s=subItens.find(function(x){return x._id===b.dataset.sid;});if(s)s.testes=s.testes.filter(function(t){return t._tid!==b.dataset.tid;});renderRes();});});
-  document.querySelectorAll(".rm-img").forEach(function(b){b.addEventListener("click",function(e){e.stopPropagation();rmImg(b.dataset.sid,b.dataset.tid);});});
-  document.querySelectorAll(".drop-zone").forEach(function(dz){
+function bindB(){
+  document.querySelectorAll(".rmB").forEach(function(b){b.addEventListener("click",function(){saveTx();var s=subs.find(function(x){return x._id===b.dataset.sid;});if(s)s.testes=s.testes.filter(function(t){return t._tid!==b.dataset.tid;});renderRes();});});
+  document.querySelectorAll(".rmImg").forEach(function(b){b.addEventListener("click",function(e){e.stopPropagation();rmImg(b.dataset.sid,b.dataset.tid);});});
+  document.querySelectorAll(".dz").forEach(function(dz){
     var sid=dz.dataset.sid,tid=dz.dataset.tid;
     dz.addEventListener("click",function(){document.getElementById("fi-"+tid).click();});
-    dz.addEventListener("dragover",function(e){e.preventDefault();dz.classList.add("over");});
-    dz.addEventListener("dragleave",function(){dz.classList.remove("over");});
-    dz.addEventListener("drop",function(e){e.preventDefault();dz.classList.remove("over");var f=e.dataTransfer.files[0];if(f&&f.type.startsWith("image/"))procImg(f,sid,tid);});
+    dz.addEventListener("dragover",function(e){e.preventDefault();dz.classList.add("ov");});
+    dz.addEventListener("dragleave",function(){dz.classList.remove("ov");});
+    dz.addEventListener("drop",function(e){e.preventDefault();dz.classList.remove("ov");var f=e.dataTransfer.files[0];if(f&&f.type.startsWith("image/"))procImg(f,sid,tid);});
     dz.addEventListener("paste",function(e){var it=(e.clipboardData||{}).items||[];for(var i=0;i<it.length;i++){if(it[i].type.startsWith("image/")){e.preventDefault();procImg(it[i].getAsFile(),sid,tid);break;}}});
     document.getElementById("fi-"+tid).addEventListener("change",function(e){if(e.target.files[0])procImg(e.target.files[0],sid,tid);});
   });
 }
 
-function toggleTeste(sid,nm,chip){
-  saveTxts();
-  var s=subItens.find(function(x){return x._id===sid;}); if(!s)return;
+function togTeste(sid,nm,chip){
+  saveTx();var s=subs.find(function(x){return x._id===sid;});if(!s)return;
   var idx=s.testes.findIndex(function(t){return t.nome===nm;});
   if(idx>=0){s.testes.splice(idx,1);renderRes();}
-  else{
-    var nt={nome:nm,texto:"",imagem:null,fileId:null,_tid:"t"+(++tid)};
-    s.testes.push(nt); chip.classList.add("on");
-    var cont=document.getElementById("tb-"+sid);
-    var tmp=document.createElement("div"); tmp.innerHTML=mkBloco(sid,nt);
-    cont.appendChild(tmp.firstElementChild); bindBlocos();
-  }
+  else{var nt={nome:nm,texto:"",imagem:null,fileId:null,_tid:"t"+(++tid)};s.testes.push(nt);chip.classList.add("on");var cont=document.getElementById("tb-"+sid);var tmp=document.createElement("div");tmp.innerHTML=mkB(sid,nt);cont.appendChild(tmp.firstElementChild);bindB();}
 }
 
-function saveTxts(){subItens.forEach(function(s){(s.testes||[]).forEach(function(t){var e=document.getElementById("tx-"+t._tid);if(e)t.texto=e.value;});});}
+function saveTx(){subs.forEach(function(s){(s.testes||[]).forEach(function(t){var e=document.getElementById("tx-"+t._tid);if(e)t.texto=e.value;});});}
 
 function procImg(file,sid,tid){
   toast("Enviando imagem...");
@@ -479,47 +420,45 @@ function procImg(file,sid,tid){
     var devId=devAtual?devAtual.id:"rascunho-"+Date.now();
     api("uploadImagem",{base64:e.target.result,nome:file.name||"imagem.png",devolutivaId:devId}).then(function(res){
       if(res.ok){
-        var s=subItens.find(function(x){return x._id===sid;}); var t=s&&s.testes.find(function(x){return x._tid===tid;});
+        var s=subs.find(function(x){return x._id===sid;});var t=s&&s.testes.find(function(x){return x._tid===tid;});
         if(t){t.imagem=res.url;t.fileId=res.fileId;}
         var dz=document.getElementById("dz-"+tid);
-        if(dz)dz.innerHTML='<input type="file" id="fi-'+tid+'" accept="image/*" style="display:none"><img class="img-prev" src="'+res.url+'"><div style="text-align:center;margin-top:.4rem"><button class="btn btn-gray btn-sm rm-img" data-sid="'+sid+'" data-tid="'+tid+'">Remover imagem</button></div>';
-        bindBlocos(); toast("Imagem salva ✅");
+        if(dz)dz.innerHTML='<input type="file" id="fi-'+tid+'" accept="image/*" style="display:none"><img class="ip" src="'+res.url+'"><div style="text-align:center;margin-top:.4rem"><button class="btn bg bs rmImg" data-sid="'+sid+'" data-tid="'+tid+'">Remover imagem</button></div>';
+        bindB();toast("Imagem salva!");
       }
     });
-  }; r.readAsDataURL(file);
+  };r.readAsDataURL(file);
 }
 
 function rmImg(sid,tid){
-  var s=subItens.find(function(x){return x._id===sid;}); var t=s&&s.testes.find(function(x){return x._tid===tid;});
-  if(!t)return; if(t.fileId)api("removerImagem",{fileId:t.fileId});
+  var s=subs.find(function(x){return x._id===sid;});var t=s&&s.testes.find(function(x){return x._tid===tid;});
+  if(!t)return;if(t.fileId)api("removerImagem",{fileId:t.fileId});
   t.imagem=null;t.fileId=null;
   var dz=document.getElementById("dz-"+tid);
-  if(dz)dz.innerHTML='<input type="file" id="fi-'+tid+'" accept="image/*" style="display:none"><div class="drop-hint">📷 Clique &nbsp;|&nbsp; <strong>Ctrl+V</strong> &nbsp;|&nbsp; Arraste</div>';
-  bindBlocos();
+  if(dz)dz.innerHTML='<input type="file" id="fi-'+tid+'" accept="image/*" style="display:none"><div class="dh">&#128247; Clique | Ctrl+V | Arraste</div>';
+  bindB();
 }
 
-// ── COLETA E SALVAR ──────────────────────────────────────────
 function coletarForm(){
-  saveTxts();
+  saveTx();
   var ins=[];
-  document.querySelectorAll("#inst-body tr").forEach(function(tr){var ii=tr.querySelectorAll("input");if(ii[0]&&(ii[0].value||ii[1].value))ins.push({instrumento:ii[0].value,construto:ii[1].value,resultado:ii[2].value,observacoes:ii[3].value});});
-  return{id:devAtual?devAtual.id:null,nome:gv("f-nome"),nascimento:gv("f-nasc"),solicitante:gv("f-sol"),faixaEtaria:gv("f-faixa"),validade:gv("f-val"),profissional:gv("f-prof"),dataFinal:gv("f-datafin"),demanda:gv("f-demanda"),procIntro:gv("f-proc"),dados:gv("f-dados"),conclusaoValidade:gv("f-conc-val"),conclusaoExtra:gv("f-conc-extra"),referencias:gv("f-refs"),instrumentos:ins,resultados:subItens.map(function(s){return{nome:s.nome,visivel:s.visivel,testes:(s.testes||[]).map(function(t){return{nome:t.nome,texto:t.texto||"",imagem:t.imagem||null,fileId:t.fileId||null};})};})};
+  document.querySelectorAll("#instBody tr").forEach(function(tr){var ii=tr.querySelectorAll("input");if(ii[0]&&(ii[0].value||ii[1].value))ins.push({instrumento:ii[0].value,construto:ii[1].value,resultado:ii[2].value,observacoes:ii[3].value});});
+  return{id:devAtual?devAtual.id:null,nome:gv("fNome"),nascimento:gv("fNasc"),solicitante:gv("fSol"),faixaEtaria:gv("fFaixa"),validade:gv("fVal"),profissional:gv("fProf"),dataFinal:gv("fDataFin"),demanda:gv("fDemanda"),procIntro:gv("fProc"),dados:gv("fDados"),conclusaoValidade:gv("fConcVal"),conclusaoExtra:gv("fConcExtra"),referencias:gv("fRefs"),instrumentos:ins,resultados:subs.map(function(s){return{nome:s.nome,visivel:s.visivel,testes:(s.testes||[]).map(function(t){return{nome:t.nome,texto:t.texto||"",imagem:t.imagem||null,fileId:t.fileId||null};});};});};
 }
 
-function salvar(silencioso){
-  var d=coletarForm(); if(!d.nome){if(!silencioso)toast("Informe o nome do paciente",true);return;}
+function salvar(sil){
+  var d=coletarForm();if(!d.nome){if(!sil)toast("Informe o nome do paciente",1);return;}
   api("salvarDevolutiva",d).then(function(res){
     if(res.ok){
       if(!devAtual)devAtual={id:res.id};else devAtual.id=res.id;
-      var idx=devCache.findIndex(function(x){return x.id===res.id;});
+      var idx=devs.findIndex(function(x){return x.id===res.id;});
       var novo=Object.assign({},d,{id:res.id});
-      if(idx>=0)devCache[idx]=novo;else devCache.push(novo);
-      if(!silencioso)toast("Salvo ✅");
+      if(idx>=0)devs[idx]=novo;else devs.push(novo);
+      if(!sil)toast("Salvo!");
     }
   });
 }
 
-// ── IMPRESSÃO ────────────────────────────────────────────────
 function imprimir(d){
   var fd=function(s){return s?new Date(s+"T00:00:00").toLocaleDateString("pt-BR",{day:"2-digit",month:"long",year:"numeric"}):""};
   var ins=(d.instrumentos||[]).filter(function(i){return i.instrumento||i.construto;});
@@ -527,166 +466,164 @@ function imprimir(d){
   var resH=(d.resultados||[]).filter(function(r){return r.visivel;}).map(function(r,ri){return"<h3 style='font-family:Arial;font-size:12pt;font-weight:bold;color:#0d7a74;margin:18px 0 8px'>4.2."+(ri+1)+" "+r.nome+"</h3>"+(r.testes||[]).map(function(t){return"<h4 style='font-family:Arial;font-size:11pt;font-weight:bold;color:#374151;margin:12px 0 5px;padding-left:8px;border-left:3px solid #13A39C'>"+t.nome+"</h4><p style='font-family:Arial;font-size:11pt;line-height:1.5;text-align:justify;margin-bottom:8px'>"+(t.texto||"").replace(/
 /g,"<br>")+"</p>"+(t.imagem?"<div style='text-align:center;margin:10px 0'><img src='"+t.imagem+"' style='max-width:90%;max-height:280px'></div>":"");}).join("");}).join("");
   var w=window.open("","_blank");
-  w.document.write("<!DOCTYPE html><html lang='pt-BR'><head><meta charset='UTF-8'><title>Laudo – "+d.nome+"</title><style>@page{margin:2.5cm}body{font-family:Arial,sans-serif;font-size:12pt;line-height:1.5;color:#1f2937}p{text-align:justify;margin-bottom:10px}h2{font-size:13pt;color:#0d7a74;font-weight:700;margin:20px 0 10px}table{border-collapse:collapse;width:100%;margin:10px 0}.np{page-break-before:always}</style></head><body>"+
-  "<div style='text-align:center;padding:40px 0;border-bottom:2px solid #13A39C;margin-bottom:30px;page-break-after:always'><p style='font-size:18pt;font-weight:700;color:#13A39C;margin-bottom:4px'>Clínica Mover</p><p style='font-size:9pt;color:#6b7280;margin-bottom:24px'>saudemover.com.br</p><div style='display:flex;justify-content:center;gap:40px;align-items:center;margin:20px 0'><img src='"+IMG1+"' style='height:65px'><img src='"+IMG2+"' style='height:65px'></div><p style='font-size:11pt;text-transform:uppercase;letter-spacing:3px;color:#0d7a74;font-weight:700;margin:16px 0 8px'>Avaliação Neuropsicológica</p><p style='font-size:20pt;font-weight:700;color:#1f2937;margin:8px 0'>"+d.nome+"</p><p style='font-size:10pt;text-transform:uppercase;letter-spacing:1px;color:#6b7280'>Laudo Neuropsicológico</p>"+(d.dataFinal?"<p style='font-size:10pt;color:#4b5563;margin-top:10px'>"+fd(d.dataFinal)+"</p>":"")+"<p style='font-size:11pt;font-weight:700;color:#0d7a74;margin-top:24px'>CLÍNICA MOVER – REABILITAÇÃO E INCLUSÃO</p></div>"+
-  "<h2>1. IDENTIFICAÇÃO</h2><p><strong>Nome:</strong> "+d.nome+"</p><p><strong>Nascimento:</strong> "+fd(d.nascimento)+"</p>"+(d.solicitante?"<p><strong>Solicitante:</strong> "+d.solicitante+"</p>":"")+"<p><strong>Validade:</strong> "+d.validade+"</p><p><strong>Profissional:</strong> "+d.profissional+"</p>"+
-  "<h2>2. DESCRIÇÃO DA DEMANDA</h2><p>"+(d.demanda||"").replace(/
+  w.document.write("<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Laudo "+d.nome+"</title><style>@page{margin:2.5cm}body{font-family:Arial,sans-serif;font-size:12pt;line-height:1.5;color:#1f2937}p{text-align:justify;margin-bottom:10px}h2{font-size:13pt;color:#0d7a74;font-weight:700;margin:20px 0 10px}table{border-collapse:collapse;width:100%;margin:10px 0}.np{page-break-before:always}</style></head><body>"+
+  "<div style='text-align:center;padding:40px 0;border-bottom:2px solid #13A39C;margin-bottom:30px;page-break-after:always'><p style='font-size:18pt;font-weight:700;color:#13A39C;margin-bottom:4px'>Clinica Mover</p><p style='font-size:9pt;color:#6b7280;margin-bottom:24px'>saudemover.com.br</p><div style='display:flex;justify-content:center;gap:40px;align-items:center;margin:20px 0'><img src='"+IMG1+"' style='height:65px'><img src='"+IMG2+"' style='height:65px'></div><p style='font-size:11pt;text-transform:uppercase;letter-spacing:3px;color:#0d7a74;font-weight:700;margin:16px 0 8px'>Avaliacao Neuropsicologica</p><p style='font-size:20pt;font-weight:700;color:#1f2937;margin:8px 0'>"+d.nome+"</p><p style='font-size:10pt;text-transform:uppercase;letter-spacing:1px;color:#6b7280'>Laudo Neuropsicologico</p>"+(d.dataFinal?"<p style='font-size:10pt;color:#4b5563;margin-top:10px'>"+fd(d.dataFinal)+"</p>":"")+"<p style='font-size:11pt;font-weight:700;color:#0d7a74;margin-top:24px'>CLINICA MOVER - REABILITACAO E INCLUSAO</p></div>"+
+  "<h2>1. IDENTIFICACAO</h2><p><strong>Nome:</strong> "+d.nome+"</p><p><strong>Nascimento:</strong> "+fd(d.nascimento)+"</p>"+(d.solicitante?"<p><strong>Solicitante:</strong> "+d.solicitante+"</p>":"")+"<p><strong>Validade:</strong> "+d.validade+"</p><p><strong>Profissional:</strong> "+d.profissional+"</p>"+
+  "<h2>2. DESCRICAO DA DEMANDA</h2><p>"+(d.demanda||"").replace(/
 /g,"<br>")+"</p>"+
   "<h2>3. PROCEDIMENTO</h2><p>"+(d.procIntro||PROC_DEF).replace(/
-/g,"<br>")+"</p>"+(ins.length?"<table><tr><th style='background:#CEE8D6;color:#0d7a74;border:1px solid #ccc;padding:6px 8px;text-align:left'>INSTRUMENTO</th><th style='background:#CEE8D6;color:#0d7a74;border:1px solid #ccc;padding:6px 8px;text-align:left'>CONSTRUTO</th><th style='background:#CEE8D6;color:#0d7a74;border:1px solid #ccc;padding:6px 8px;text-align:left'>RESULTADO</th><th style='background:#CEE8D6;color:#0d7a74;border:1px solid #ccc;padding:6px 8px;text-align:left'>OBSERVAÇÕES</th></tr>"+insH+"</table>":"")+
-  "<h2>4. ANÁLISE</h2><h3 style='font-family:Arial;font-size:12pt;font-weight:700;margin:15px 0 8px'>4.1 DADOS GERAIS</h3><p>"+(d.dados||"").replace(/
+/g,"<br>")+"</p>"+(ins.length?"<table><tr><th style='background:#CEE8D6;color:#0d7a74;border:1px solid #ccc;padding:6px 8px;text-align:left'>INSTRUMENTO</th><th style='background:#CEE8D6;color:#0d7a74;border:1px solid #ccc;padding:6px 8px;text-align:left'>CONSTRUTO</th><th style='background:#CEE8D6;color:#0d7a74;border:1px solid #ccc;padding:6px 8px;text-align:left'>RESULTADO</th><th style='background:#CEE8D6;color:#0d7a74;border:1px solid #ccc;padding:6px 8px;text-align:left'>OBSERVACOES</th></tr>"+insH+"</table>":"")+
+  "<h2>4. ANALISE</h2><h3 style='font-family:Arial;font-size:12pt;font-weight:700;margin:15px 0 8px'>4.1 DADOS GERAIS</h3><p>"+(d.dados||"").replace(/
 /g,"<br>")+"</p><h3 style='font-family:Arial;font-size:12pt;font-weight:700;margin:15px 0 8px'>4.2 RESULTADOS</h3>"+resH+
-  "<h2>5. CONCLUSÃO</h2><p>"+(d.conclusaoValidade||"").replace(/
+  "<h2>5. CONCLUSAO</h2><p>"+(d.conclusaoValidade||"").replace(/
 /g,"<br>")+"</p>"+(d.conclusaoExtra?"<p>"+d.conclusaoExtra.replace(/
 /g,"<br>")+"</p>":"")+(d.dataFinal?"<p>Curitiba, "+fd(d.dataFinal)+"</p>":"")+
-  "<div style='margin-top:40px;text-align:center;border-top:1px solid #d1d5db;padding-top:20px;page-break-inside:avoid'><p>Atenciosamente,</p><p style='font-size:13pt;font-weight:700;color:#13A39C;margin:4px 0'>CLÍNICA MOVER – REABILITAÇÃO E INCLUSÃO</p><p style='font-size:10pt;color:#4b5563'>CNPJ: 51825557/0001-00</p><p style='font-size:9pt;color:#6b7280;font-style:italic;max-width:500px;margin:12px auto;line-height:1.5'>* As informações aqui apresentadas são sigilosas e referem-se a um momento específico da vida do paciente, portanto, sujeitas a mudanças contínuas por tratar-se de um processo de desenvolvimento dinâmico e evolutivo do ser humano. Recomenda-se zelo ao lidar com as informações relatadas, preservando assim, a sua singularidade.</p></div>"+
-  (d.referencias?"<div class='np'><h2>REFERÊNCIAS</h2><p style='font-size:10pt;line-height:1.6'>"+d.referencias.replace(/
+  "<div style='margin-top:40px;text-align:center;border-top:1px solid #d1d5db;padding-top:20px;page-break-inside:avoid'><p>Atenciosamente,</p><p style='font-size:13pt;font-weight:700;color:#13A39C;margin:4px 0'>CLINICA MOVER - REABILITACAO E INCLUSAO</p><p style='font-size:10pt;color:#4b5563'>CNPJ: 51825557/0001-00</p><p style='font-size:9pt;color:#6b7280;font-style:italic;max-width:500px;margin:12px auto;line-height:1.5'>As informacoes aqui apresentadas sao sigilosas e referem-se a um momento especifico da vida do paciente, portanto, sujeitas a mudancas continuas por tratar-se de um processo de desenvolvimento dinamico e evolutivo do ser humano. Recomenda-se zelo ao lidar com as informacoes relatadas, preservando assim, a sua singularidade.</p></div>"+
+  (d.referencias?"<div class='np'><h2>REFERENCIAS</h2><p style='font-size:10pt;line-height:1.6'>"+d.referencias.replace(/
 /g,"<br>")+"</p></div>":"")+
-  "</body></html>"); w.document.close(); w.onload=function(){w.print();};
+  "</body></html>");w.document.close();w.onload=function(){w.print();};
 }
 
-// ── BUSCA ────────────────────────────────────────────────────
 function renderBusca(){
-  document.getElementById("bf").innerHTML='<option value="">Todas as faixas</option>'+faixaCache.map(function(f){return'<option value="'+f.nome+'">'+f.nome+"</option>";}).join("");
-  var profs=[...new Set(devCache.map(function(d){return d.profissional;}).filter(Boolean))];
-  document.getElementById("bp").innerHTML='<option value="">Todos os profissionais</option>'+profs.map(function(p){return'<option value="'+p+'">'+p+"</option>";}).join("");
+  document.getElementById("bFaixa").innerHTML='<option value="">Todas as faixas</option>'+faixas.map(function(f){return'<option value="'+f.nome+'">'+f.nome+"</option>";}).join("");
+  var ps=[].concat(devs).map(function(d){return d.profissional;}).filter(function(v,i,a){return v&&a.indexOf(v)===i;});
+  document.getElementById("bProf").innerHTML='<option value="">Todos os profissionais</option>'+ps.map(function(p){return'<option value="'+p+'">'+p+"</option>";}).join("");
   filtrarBusca();
 }
+
 function filtrarBusca(){
-  var n=document.getElementById("bn").value.toLowerCase(),f=document.getElementById("bf").value,p=document.getElementById("bp").value,dt=document.getElementById("bd").value;
-  var devs=devCache.filter(function(d){return(!n||(d.nome&&d.nome.toLowerCase().includes(n)))&&(!f||d.faixaEtaria===f)&&(!p||d.profissional===p)&&(!dt||d.dataFinal===dt);});
-  var cont=document.getElementById("busca-res");
-  if(!devs.length){cont.innerHTML='<div style="text-align:center;color:var(--gray-400);padding:3rem">Nenhuma devolutiva encontrada.</div>';return;}
-  cont.innerHTML='<table class="rep-table"><thead><tr><th>Nome</th><th>Faixa</th><th>Profissional</th><th>Finalização</th><th>Ações</th></tr></thead><tbody>'+devs.map(function(d){return'<tr><td><strong>'+(d.nome||"—")+'</strong></td><td>'+(d.faixaEtaria||"—")+'</td><td>'+(d.profissional||"—")+'</td><td>'+(d.dataFinal?new Date(d.dataFinal+"T00:00:00").toLocaleDateString("pt-BR"):"—")+'</td><td style="display:flex;gap:.3rem;flex-wrap:wrap"><button class="btn btn-teal btn-sm" onclick="editDev(''+d.id+'')">Editar</button><button class="btn btn-gray btn-sm" onclick="var d=devCache.find(function(x){return x.id===''+d.id+'';});if(d)imprimir(d)">Imprimir</button><button class="btn btn-danger btn-sm" onclick="confirmDel(''+d.id+'')">Excluir</button></td></tr>';}).join("")+"</tbody></table>";
+  var n=document.getElementById("bNome").value.toLowerCase(),f=document.getElementById("bFaixa").value,p=document.getElementById("bProf").value,dt=document.getElementById("bData").value;
+  var dd=devs.filter(function(d){return(!n||(d.nome&&d.nome.toLowerCase().includes(n)))&&(!f||d.faixaEtaria===f)&&(!p||d.profissional===p)&&(!dt||d.dataFinal===dt);});
+  var c=document.getElementById("bRes");
+  if(!dd.length){c.innerHTML='<div style="text-align:center;color:var(--g5);padding:3rem">Nenhuma devolutiva encontrada.</div>';return;}
+  c.innerHTML='<table class="rt"><thead><tr><th>Nome</th><th>Faixa</th><th>Profissional</th><th>Finalizacao</th><th>Acoes</th></tr></thead><tbody>'+dd.map(function(d){return'<tr><td><strong>'+(d.nome||"")+'</strong></td><td>'+(d.faixaEtaria||"")+'</td><td>'+(d.profissional||"")+'</td><td>'+(d.dataFinal?new Date(d.dataFinal+"T00:00:00").toLocaleDateString("pt-BR"):"")+'</td><td><div style="display:flex;gap:.3rem;flex-wrap:wrap"><button class="btn bt bs" onclick="editDev(''+d.id+'')">Editar</button><button class="btn bg bs" onclick="var x=devs.find(function(x){return x.id===''+d.id+'';});if(x)imprimir(x)">Imprimir</button><button class="btn br bs" onclick="confDel(''+d.id+'')">Excluir</button></div></td></tr>';}).join("")+"</tbody></table>";
 }
-function editDev(id){var d=devCache.find(function(x){return x.id===id;});if(!d)return;show("nova");setTimeout(function(){initNova(d);},50);}
-function confirmDel(id){
-  document.getElementById("confirm-msg").textContent="Excluir esta devolutiva permanentemente?";
-  document.getElementById("modal-confirm").style.display="flex";
-  document.getElementById("ok-confirm").onclick=function(){
-    document.getElementById("modal-confirm").style.display="none";
-    api("excluirDevolutiva",{id:id}).then(function(){devCache=devCache.filter(function(d){return d.id!==id;});filtrarBusca();toast("Excluído");});
+
+function editDev(id){var d=devs.find(function(x){return x.id===id;});if(!d)return;show("nova");setTimeout(function(){initNova(d);},50);}
+
+function confDel(id){
+  document.getElementById("confirmMsg").textContent="Excluir esta devolutiva?";
+  document.getElementById("moConfirm").style.display="flex";
+  document.getElementById("okConfirm").onclick=function(){
+    document.getElementById("moConfirm").style.display="none";
+    api("excluirDevolutiva",{id:id}).then(function(){devs=devs.filter(function(d){return d.id!==id;});filtrarBusca();toast("Excluido");});
   };
 }
 
-// ── RELATÓRIO ────────────────────────────────────────────────
 function renderRel(){
-  var devs=[].concat(devCache),s=document.getElementById("rel-sort").value;
-  devs.sort(function(a,b){var ka=a[s]||"",kb=b[s]||"";return s==="dataFinal"?kb.localeCompare(ka):ka.localeCompare(kb);});
-  var cont=document.getElementById("rel-res");
-  if(!devs.length){cont.innerHTML='<div style="text-align:center;color:var(--gray-400);padding:3rem">Nenhuma devolutiva salva.</div>';return;}
-  cont.innerHTML='<table class="rep-table"><thead><tr><th>Nome</th><th>Faixa</th><th>Profissional</th><th>Finalização</th><th>Status</th><th>Ações</th></tr></thead><tbody>'+devs.map(function(d){return'<tr><td><strong>'+(d.nome||"—")+'</strong></td><td>'+(d.faixaEtaria||"—")+'</td><td>'+(d.profissional||"—")+'</td><td>'+(d.dataFinal?new Date(d.dataFinal+"T00:00:00").toLocaleDateString("pt-BR"):"—")+'</td><td><span class="badge '+(d.dataFinal?"badge-teal":"badge-gray")+'">'+(d.dataFinal?"Finalizado":"Rascunho")+'</span></td><td style="display:flex;gap:.3rem"><button class="btn btn-teal btn-sm" onclick="editDev(''+d.id+'')">Editar</button><button class="btn btn-gray btn-sm" onclick="var d=devCache.find(function(x){return x.id===''+d.id+'';});if(d)imprimir(d)">Imprimir</button></td></tr>';}).join("")+"</tbody></table>";
+  var dd=[].concat(devs),s=document.getElementById("relSort").value;
+  dd.sort(function(a,b){var ka=a[s]||"",kb=b[s]||"";return s==="dataFinal"?kb.localeCompare(ka):ka.localeCompare(kb);});
+  var c=document.getElementById("relRes");
+  if(!dd.length){c.innerHTML='<div style="text-align:center;color:var(--g5);padding:3rem">Nenhuma devolutiva salva.</div>';return;}
+  c.innerHTML='<table class="rt"><thead><tr><th>Nome</th><th>Faixa</th><th>Profissional</th><th>Finalizacao</th><th>Status</th><th>Acoes</th></tr></thead><tbody>'+dd.map(function(d){return'<tr><td><strong>'+(d.nome||"")+'</strong></td><td>'+(d.faixaEtaria||"")+'</td><td>'+(d.profissional||"")+'</td><td>'+(d.dataFinal?new Date(d.dataFinal+"T00:00:00").toLocaleDateString("pt-BR"):"")+'</td><td><span class="bd '+(d.dataFinal?"bt2":"bg2")+'">'+(d.dataFinal?"Finalizado":"Rascunho")+'</span></td><td><div style="display:flex;gap:.3rem"><button class="btn bt bs" onclick="editDev(''+d.id+'')">Editar</button><button class="btn bg bs" onclick="var x=devs.find(function(x){return x.id===''+d.id+'';});if(x)imprimir(x)">Imprimir</button></div></td></tr>';}).join("")+"</tbody></table>";
 }
 
-// ── CADASTROS ────────────────────────────────────────────────
-function renderLista(contId,arr,cols,delAction,afterDel){
-  var cont=document.getElementById(contId);
-  if(!arr.length){cont.innerHTML='<div style="text-align:center;color:var(--gray-400);padding:2rem">Nenhum registro.</div>';return;}
-  cont.innerHTML='<table class="rep-table"><thead><tr>'+cols.map(function(c){return"<th>"+c.l+"</th>";}).join("")+'<th></th></tr></thead><tbody>'+arr.map(function(item){return"<tr>"+cols.map(function(c){return"<td>"+(item[c.k]||"")+"</td>";}).join("")+'<td><button class="btn btn-danger btn-sm" onclick="if(!confirm('Excluir?'))return;api(''+delAction+'',{id:''+item.id+''}).then(function(){'+afterDel+'})">Excluir</button></td></tr>';}).join("")+"</tbody></table>";
+function renderLst(cid,arr,cols,delAct){
+  var c=document.getElementById(cid);
+  if(!arr.length){c.innerHTML='<div style="text-align:center;color:var(--g5);padding:2rem">Nenhum registro.</div>';return;}
+  c.innerHTML='<table class="rt"><thead><tr>'+cols.map(function(x){return"<th>"+x.l+"</th>";}).join("")+'<th></th></tr></thead><tbody>'+arr.map(function(item){return"<tr>"+cols.map(function(x){return"<td>"+(item[x.k]||"")+"</td>";}).join("")+'<td><button class="btn br bs" onclick="if(!confirm('Excluir?'))return;api(''+delAct+'',{id:''+item.id+''}).then(function(){location.reload();})">Excluir</button></td></tr>';}).join("")+"</tbody></table>";
 }
 
-// ── TOGGLE/SECTION ────────────────────────────────────────────
-function toggleSec(prefix){
-  var b=document.getElementById(prefix+"-body"),t=document.getElementById(prefix+"-ti");
-  var open=b.style.display!=="none"; b.style.display=open?"none":"block";
-  t.textContent=open?"▼":"▲"; t.classList.toggle("open",!open);
+function togSec(s){
+  var b=document.getElementById("b-"+s),t=document.getElementById("ti-"+s);
+  var op=b.style.display!=="none";b.style.display=op?"none":"block";
+  t.innerHTML=op?"&#9660;":"&#9650;";t.classList.toggle("op",!op);
 }
-function irPara(prefix){
-  var b=document.getElementById(prefix+"-body"),t=document.getElementById(prefix+"-ti");
-  b.style.display="block"; t.textContent="▲"; t.classList.add("open");
+function irPara(s){
+  var b=document.getElementById("b-"+s),t=document.getElementById("ti-"+s);
+  b.style.display="block";t.innerHTML="&#9650;";t.classList.add("op");
   setTimeout(function(){b.scrollIntoView({behavior:"smooth",block:"start"});},80);
 }
 
-// ── BIND EVENTOS ─────────────────────────────────────────────
-document.getElementById("btn-login").addEventListener("click",login);
+document.getElementById("btnLogin").addEventListener("click",login);
 document.getElementById("lu").addEventListener("keydown",function(e){if(e.key==="Enter")login();});
-document.getElementById("ls").addEventListener("keydown",function(e){if(e.key==="Enter")login();});
+document.getElementById("lp").addEventListener("keydown",function(e){if(e.key==="Enter")login();});
 
-document.getElementById("hb-nova").addEventListener("click",function(){show("nova");initNova();});
-document.getElementById("hb-buscar").addEventListener("click",function(){show("buscar");renderBusca();});
-document.getElementById("hb-rel").addEventListener("click",function(){show("relatorio");renderRel();});
-document.getElementById("hb-pac").addEventListener("click",function(){show("cad-pac");api("listarPacientes",{}).then(function(a){renderLista("lista-pac",a,[{k:"nome",l:"Nome"},{k:"nascimento",l:"Nascimento"},{k:"faixa",l:"Faixa"},{k:"contato",l:"Contato"}],"excluirPaciente","api('listarPacientes',{}).then(function(a){renderLista('lista-pac',a,[{k:'nome',l:'Nome'},{k:'nascimento',l:'Nascimento'},{k:'faixa',l:'Faixa'},{k:'contato',l:'Contato'}],'excluirPaciente','');});");});});
-document.getElementById("hb-faixa").addEventListener("click",function(){show("cad-faixa");api("listarFaixas",{}).then(function(a){faixaCache=a;renderLista("lista-faixas",a,[{k:"nome",l:"Nome"},{k:"intervalo",l:"Intervalo"}],"excluirFaixa","api('listarFaixas',{}).then(function(a){faixaCache=a;renderLista('lista-faixas',a,[{k:'nome',l:'Nome'},{k:'intervalo',l:'Intervalo'}],'excluirFaixa','');});");});});
-document.getElementById("hb-prof").addEventListener("click",function(){show("cad-prof");api("listarProfissionais",{}).then(function(a){profCache=a;renderLista("lista-prof",a,[{k:"nome",l:"Nome"},{k:"crp",l:"CRP"},{k:"especialidade",l:"Especialidade"}],"excluirProfissional","api('listarProfissionais',{}).then(function(a){profCache=a;renderLista('lista-prof',a,[{k:'nome',l:'Nome'},{k:'crp',l:'CRP'},{k:'especialidade',l:'Especialidade'}],'excluirProfissional','');});");});});
+document.getElementById("hNova").addEventListener("click",function(){show("nova");initNova();});
+document.getElementById("hBuscar").addEventListener("click",function(){show("buscar");renderBusca();});
+document.getElementById("hRel").addEventListener("click",function(){show("relatorio");renderRel();});
+document.getElementById("hPac").addEventListener("click",function(){show("cadPac");api("listarPacientes",{}).then(function(a){renderLst("lstPac",a,[{k:"nome",l:"Nome"},{k:"nascimento",l:"Nascimento"},{k:"faixa",l:"Faixa"},{k:"contato",l:"Contato"}],"excluirPaciente");});});
+document.getElementById("hFaixa").addEventListener("click",function(){show("cadFaixa");api("listarFaixas",{}).then(function(a){faixas=a;renderLst("lstFaixa",a,[{k:"nome",l:"Nome"},{k:"intervalo",l:"Intervalo"}],"excluirFaixa");});});
+document.getElementById("hProf").addEventListener("click",function(){show("cadProf");api("listarProfissionais",{}).then(function(a){profs=a;renderLst("lstProf",a,[{k:"nome",l:"Nome"},{k:"crp",l:"CRP"},{k:"especialidade",l:"Especialidade"}],"excluirProfissional");});});
 
-document.getElementById("bb-nova").addEventListener("click",home);
-document.getElementById("bb-buscar").addEventListener("click",home);
-document.getElementById("bb-rel").addEventListener("click",home);
-document.getElementById("bb-pac").addEventListener("click",home);
-document.getElementById("bb-faixa").addEventListener("click",home);
-document.getElementById("bb-prof").addEventListener("click",home);
+document.getElementById("bbNova").addEventListener("click",goHome);
+document.getElementById("bbBuscar").addEventListener("click",goHome);
+document.getElementById("bbRel").addEventListener("click",goHome);
+document.getElementById("bbPac").addEventListener("click",goHome);
+document.getElementById("bbFaixa").addEventListener("click",goHome);
+document.getElementById("bbProf").addEventListener("click",goHome);
 
-document.getElementById("btn-salvar").addEventListener("click",function(){salvar(false);});
-document.getElementById("btn-saveas").addEventListener("click",function(){document.getElementById("saveas-nome").value="";document.getElementById("modal-saveas").style.display="flex";});
-document.getElementById("btn-imprimir").addEventListener("click",function(){imprimir(coletarForm());});
-document.getElementById("btn-finalizar").addEventListener("click",function(){salvar(false);home();});
-document.getElementById("add-inst-btn").addEventListener("click",addInst);
-document.getElementById("add-sub-btn").addEventListener("click",function(){saveTxts();var n=prompt("Nome do novo subitem:");if(n){subItens.push({nome:n.toUpperCase(),visivel:true,testes:[],_id:"s"+(++sid)});renderRes();}});
-document.getElementById("proc-edit-btn").addEventListener("click",function(){
-  var v=document.getElementById("proc-view"),e=document.getElementById("proc-edit"),b=document.getElementById("proc-edit-btn");
-  if(e.style.display==="none"){e.style.display="block";v.style.display="none";b.textContent="✅ concluir";}
-  else{v.textContent=gv("f-proc");e.style.display="none";v.style.display="block";b.textContent="✏️ editar";}
+document.getElementById("btnSalvar").addEventListener("click",function(){salvar(false);});
+document.getElementById("btnSaveas").addEventListener("click",function(){document.getElementById("saveasNome").value="";document.getElementById("moSaveas").style.display="flex";});
+document.getElementById("btnImprimir").addEventListener("click",function(){imprimir(coletarForm());});
+document.getElementById("btnFinalizar").addEventListener("click",function(){salvar(false);goHome();});
+document.getElementById("addInstBtn").addEventListener("click",addInst);
+document.getElementById("addSubBtn").addEventListener("click",function(){saveTx();var n=prompt("Nome do novo subitem:");if(n){subs.push({nome:n.toUpperCase(),visivel:true,testes:[],_id:"s"+(++sid)});renderRes();}});
+document.getElementById("procEditBtn").addEventListener("click",function(){
+  var v=document.getElementById("procView"),e=document.getElementById("procEdit"),b=document.getElementById("procEditBtn");
+  if(e.style.display==="none"){e.style.display="block";v.style.display="none";b.textContent="concluir";}
+  else{v.textContent=gv("fProc");e.style.display="none";v.style.display="block";b.textContent="editar";}
 });
-document.getElementById("f-val").addEventListener("input",updVal);
+document.getElementById("fVal").addEventListener("input",updVal);
 document.getElementById("nova").addEventListener("input",function(){clearTimeout(saveTimer);saveTimer=setTimeout(function(){salvar(true);},3000);});
 
-document.querySelectorAll(".fsec-header[data-sec]").forEach(function(h){h.addEventListener("click",function(){toggleSec(h.dataset.sec);});});
-document.querySelectorAll(".goto-btn[data-to]").forEach(function(b){b.addEventListener("click",function(){irPara(b.dataset.to);});});
-document.querySelectorAll(".viz-btn[data-viz]").forEach(function(b){b.addEventListener("click",function(){var el=document.getElementById(b.dataset.viz);el.style.display=el.style.display==="none"?"":"none";});});
+document.querySelectorAll(".fsh[data-s]").forEach(function(h){h.addEventListener("click",function(){togSec(h.dataset.s);});});
+document.querySelectorAll(".goto[data-to]").forEach(function(b){b.addEventListener("click",function(){irPara(b.dataset.to);});});
+document.querySelectorAll(".vz[data-vz]").forEach(function(b){b.addEventListener("click",function(){var el=document.getElementById(b.dataset.vz);el.style.display=el.style.display==="none"?"":"none";});});
 
-document.getElementById("f-nome").addEventListener("input",function(){
-  var v=this.value.toLowerCase(),ac=document.getElementById("ac-nome");
-  var items=devCache.map(function(d){return d.nome;}).filter(function(n){return n&&n.toLowerCase().includes(v);}).slice(0,8);
+document.getElementById("fNome").addEventListener("input",function(){
+  var v=this.value.toLowerCase(),ac=document.getElementById("acNome");
+  var items=devs.map(function(d){return d.nome;}).filter(function(n){return n&&n.toLowerCase().includes(v);}).slice(0,8);
   if(!items.length){ac.style.display="none";return;}
-  ac.innerHTML=items.map(function(n){return'<div style="padding:.45rem .65rem;cursor:pointer;font-size:.85rem" onmouseover="this.style.background='#e8f7f6'" onmouseout="this.style.background=''" onclick="document.getElementById('f-nome').value=''+n+'';document.getElementById('ac-nome').style.display='none'">'+n+"</div>";}).join("");
+  ac.innerHTML=items.map(function(n){return'<div class="ai" onclick="document.getElementById('fNome').value=''+n+'';document.getElementById('acNome').style.display='none'">'+n+"</div>";}).join("");
   ac.style.display="block";
 });
-document.getElementById("f-prof").addEventListener("input",function(){
-  var v=this.value.toLowerCase(),ac=document.getElementById("ac-prof");
-  var items=profCache.map(function(p){return p.nome+" / CRP "+p.crp;}).filter(function(n){return n.toLowerCase().includes(v);}).slice(0,6);
+document.getElementById("fProf").addEventListener("input",function(){
+  var v=this.value.toLowerCase(),ac=document.getElementById("acProf");
+  var items=profs.map(function(p){return p.nome+" / CRP "+p.crp;}).filter(function(n){return n.toLowerCase().includes(v);}).slice(0,6);
   if(!items.length){ac.style.display="none";return;}
-  ac.innerHTML=items.map(function(n){return'<div style="padding:.45rem .65rem;cursor:pointer;font-size:.85rem" onmouseover="this.style.background='#e8f7f6'" onmouseout="this.style.background=''" onclick="document.getElementById('f-prof').value=''+n+'';document.getElementById('ac-prof').style.display='none'">'+n+"</div>";}).join("");
+  ac.innerHTML=items.map(function(n){return'<div class="ai" onclick="document.getElementById('fProf').value=''+n+'';document.getElementById('acProf').style.display='none'">'+n+"</div>";}).join("");
   ac.style.display="block";
 });
-document.addEventListener("click",function(){["ac-nome","ac-prof"].forEach(function(id){var el=document.getElementById(id);if(el)el.style.display="none";});});
+document.addEventListener("click",function(){["acNome","acProf"].forEach(function(id){var el=document.getElementById(id);if(el)el.style.display="none";});});
 
-document.getElementById("rel-sort").addEventListener("change",renderRel);
-document.getElementById("bn").addEventListener("input",filtrarBusca);
-document.getElementById("bf").addEventListener("change",filtrarBusca);
-document.getElementById("bp").addEventListener("change",filtrarBusca);
-document.getElementById("bd").addEventListener("change",filtrarBusca);
+document.getElementById("relSort").addEventListener("change",renderRel);
+document.getElementById("bNome").addEventListener("input",filtrarBusca);
+document.getElementById("bFaixa").addEventListener("change",filtrarBusca);
+document.getElementById("bProf").addEventListener("change",filtrarBusca);
+document.getElementById("bData").addEventListener("change",filtrarBusca);
 
-document.getElementById("cancel-saveas").addEventListener("click",function(){document.getElementById("modal-saveas").style.display="none";});
-document.getElementById("ok-saveas").addEventListener("click",function(){
-  var nome=document.getElementById("saveas-nome").value.trim();
-  if(!nome){toast("Informe o nome",true);return;}
+document.getElementById("cancelSaveas").addEventListener("click",function(){document.getElementById("moSaveas").style.display="none";});
+document.getElementById("okSaveas").addEventListener("click",function(){
+  var nome=document.getElementById("saveasNome").value.trim();
+  if(!nome){toast("Informe o nome",1);return;}
   var d=coletarForm();d.id=null;d.nome=nome;
-  document.getElementById("modal-saveas").style.display="none";
-  api("salvarDevolutiva",d).then(function(res){if(res.ok){devAtual={id:res.id};devCache.push(Object.assign({},d,{id:res.id}));document.getElementById("f-nome").value=nome;toast("Salvo como nova devolutiva ✅");}});
+  document.getElementById("moSaveas").style.display="none";
+  api("salvarDevolutiva",d).then(function(res){if(res.ok){devAtual={id:res.id};devs.push(Object.assign({},d,{id:res.id}));document.getElementById("fNome").value=nome;toast("Salvo!");}});
 });
-document.getElementById("cancel-confirm").addEventListener("click",function(){document.getElementById("modal-confirm").style.display="none";});
+document.getElementById("cancelConfirm").addEventListener("click",function(){document.getElementById("moConfirm").style.display="none";});
 
-document.getElementById("new-pac-btn").addEventListener("click",function(){
-  document.getElementById("cp-faixa").innerHTML='<option value="">Selecionar...</option>'+faixaCache.map(function(f){return'<option value="'+f.nome+'">'+f.nome+"</option>";}).join("");
-  ["cp-nome","cp-nasc","cp-cont"].forEach(function(id){document.getElementById(id).value="";});
-  document.getElementById("form-pac").style.display="block";
+document.getElementById("newPacBtn").addEventListener("click",function(){
+  document.getElementById("cpFaixa").innerHTML='<option value="">Selecionar...</option>'+faixas.map(function(f){return'<option value="'+f.nome+'">'+f.nome+"</option>";}).join("");
+  ["cpNome","cpNasc","cpCont"].forEach(function(id){document.getElementById(id).value="";});
+  document.getElementById("formPac").style.display="block";
 });
-document.getElementById("cancel-pac").addEventListener("click",function(){document.getElementById("form-pac").style.display="none";});
-document.getElementById("save-pac").addEventListener("click",function(){
-  var nome=document.getElementById("cp-nome").value.trim();if(!nome){toast("Nome obrigatório",true);return;}
-  api("salvarPaciente",{nome:nome,nascimento:gv("cp-nasc"),faixa:gv("cp-faixa"),contato:gv("cp-cont")}).then(function(){document.getElementById("form-pac").style.display="none";toast("Paciente salvo ✅");});
+document.getElementById("cancelPac").addEventListener("click",function(){document.getElementById("formPac").style.display="none";});
+document.getElementById("savePac").addEventListener("click",function(){
+  var nome=document.getElementById("cpNome").value.trim();if(!nome){toast("Nome obrigatorio",1);return;}
+  api("salvarPaciente",{nome:nome,nascimento:gv("cpNasc"),faixa:gv("cpFaixa"),contato:gv("cpCont")}).then(function(){document.getElementById("formPac").style.display="none";toast("Paciente salvo!");});
 });
-document.getElementById("new-faixa-btn").addEventListener("click",function(){["ff-nome","ff-int"].forEach(function(id){document.getElementById(id).value="";});document.getElementById("form-faixa").style.display="block";});
-document.getElementById("cancel-faixa").addEventListener("click",function(){document.getElementById("form-faixa").style.display="none";});
-document.getElementById("save-faixa").addEventListener("click",function(){
-  var nome=document.getElementById("ff-nome").value.trim();if(!nome){toast("Nome obrigatório",true);return;}
-  api("salvarFaixa",{nome:nome,intervalo:gv("ff-int")}).then(function(res){if(res.ok){faixaCache.push({id:res.id,nome:nome,intervalo:gv("ff-int")});document.getElementById("form-faixa").style.display="none";toast("Faixa salva ✅");}});
+document.getElementById("newFaixaBtn").addEventListener("click",function(){["ffNome","ffInt"].forEach(function(id){document.getElementById(id).value="";});document.getElementById("formFaixa").style.display="block";});
+document.getElementById("cancelFaixa").addEventListener("click",function(){document.getElementById("formFaixa").style.display="none";});
+document.getElementById("saveFaixa").addEventListener("click",function(){
+  var nome=document.getElementById("ffNome").value.trim();if(!nome){toast("Nome obrigatorio",1);return;}
+  api("salvarFaixa",{nome:nome,intervalo:gv("ffInt")}).then(function(res){if(res.ok){faixas.push({id:res.id,nome:nome,intervalo:gv("ffInt")});document.getElementById("formFaixa").style.display="none";toast("Faixa salva!");}});
 });
-document.getElementById("new-prof-btn").addEventListener("click",function(){["pf-nome","pf-crp","pf-esp","pf-cont"].forEach(function(id){document.getElementById(id).value="";});document.getElementById("form-prof").style.display="block";});
-document.getElementById("cancel-prof").addEventListener("click",function(){document.getElementById("form-prof").style.display="none";});
-document.getElementById("save-prof").addEventListener("click",function(){
-  var nome=document.getElementById("pf-nome").value.trim();if(!nome){toast("Nome obrigatório",true);return;}
-  api("salvarProfissional",{nome:nome,crp:gv("pf-crp"),especialidade:gv("pf-esp"),contato:gv("pf-cont")}).then(function(res){if(res.ok){profCache.push({id:res.id,nome:nome,crp:gv("pf-crp"),especialidade:gv("pf-esp")});document.getElementById("form-prof").style.display="none";toast("Profissional salvo ✅");}});
+document.getElementById("newProfBtn").addEventListener("click",function(){["pfNome","pfCrp","pfEsp","pfCont"].forEach(function(id){document.getElementById(id).value="";});document.getElementById("formProf").style.display="block";});
+document.getElementById("cancelProf").addEventListener("click",function(){document.getElementById("formProf").style.display="none";});
+document.getElementById("saveProf").addEventListener("click",function(){
+  var nome=document.getElementById("pfNome").value.trim();if(!nome){toast("Nome obrigatorio",1);return;}
+  api("salvarProfissional",{nome:nome,crp:gv("pfCrp"),especialidade:gv("pfEsp"),contato:gv("pfCont")}).then(function(res){if(res.ok){profs.push({id:res.id,nome:nome});document.getElementById("formProf").style.display="none";toast("Profissional salvo!");}});
 });
 </script>
 </body>
